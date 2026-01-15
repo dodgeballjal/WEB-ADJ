@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selecciones Jalisco - Asociación de Dodgeball Jalisco</title>
+    <!-- Favicon - Icono de la pestaña del navegador -->
+    <link rel="icon" type="image/svg+xml" href="imagen/logo-adj.svg">
+    <link rel="icon" type="image/png" href="imagen/logo-adj.png">
+    <link rel="apple-touch-icon" href="imagen/logo-adj.png">
+
+    <!-- Icon Libraries - SOLO LAS NECESARIAS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/selecion_jal.css">
+    <link rel="stylesheet" href="css/fix-spacing.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="imagen/logo-adj.svg" alt="Logo Asociación de Dodgeball Jalisco">
+                <span>Dodgeball Jalisco</span>
+            </div>
+        
+            <button class="menu-toggle" 
+                aria-label="botón menu-toggle" 
+                id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-inicio">
+                            Inicio <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-inicio">
+                            <a href="principal.html" class="submenu-link">
+                                <i class="fas fa-home"></i> Página Principal
+                            </a>
+                            <a href="principal.html#nosotros" class="submenu-link">
+                                <i class="fa-solid fa-people-group"></i> Nosotros
+                            </a>
+                            <a href="mvv.html" class="submenu-link">
+                                <i class="fa-solid fa-medal"></i> Nuestros Valores
+                            </a>
+                            <a href="organigrama.html" class="submenu-link">
+                                <i class="fa-solid fa-sitemap"></i> Directiva
+                            </a>
+                            <a href="documentos.html" class="submenu-link">
+                                <i class="fa-solid fa-box-archive"></i> Documentos
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-dodgeball">
+                            Dodgeball <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-dodgeball">
+                            <a href="principal.html#juego" class="submenu-link">
+                                <i class="fa-solid fa-question-circle"></i> ¿Qué es Dodgeball?
+                            </a>
+                            <a href="presentacion.html" class="submenu-link">
+                                <i class="fa-solid fa-binoculars"></i> ¿Cómo se juega?
+                            </a>
+                            <a href="reglamentos.html" class="submenu-link">
+                                <i class="fa-solid fa-book"></i> Reglamento deportivo
+                            </a>
+                            <a href="principal.html#equipos" class="submenu-link">
+                                <i class="fa-solid fa-ranking-star"></i> Clubes y Escuelas
+                            </a>
+                            <a href="principal.html#sedes" class="submenu-link">
+                                <i class="fa-solid fa-location-dot"></i> SEDES
+                            </a>
+                            <a href="seleccion_jal.html" class="submenu-link">
+                                <i class="fa-solid fa-star"></i> Selección Jalisco
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-eventos">
+                            Eventos <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-eventos">
+                            <a href="calendario.html" class="submenu-link">
+                                <i class="fa-solid fa-calendar"></i> Calendario 2026
+                            </a>
+                            <a href="torneos_estatales.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Torneos Estatales
+                            </a>
+                            <a href="torneos_nacionales.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Torneos Nacionales
+                            </a>
+                            <a href="liga_metropolitana.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Liga Metropolitana
+                            </a>
+                            <a href="galeria.html" class="submenu-link">
+                                <i class="fa-solid fa-camera"></i> Galería de Eventos
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-solicitudes">
+                            Solicitudes <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-solicitudes">
+                            <a href="#" onclick="openModal('afiliaciones')" class="submenu-link">
+                                <i class="fa-solid fa-id-card-clip"></i> Afiliaciones
+                            </a>
+                            <a href="#" onclick="openModal('cursos')" class="submenu-link">
+                                <i class="fa-solid fa-file-signature"></i> Curso Arbitraje
+                            </a>
+                            <a href="#" onclick="openModal('cursos')" class="submenu-link">
+                                <i class="fa-solid fa-file-signature"></i> Curso Couches
+                            </a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSXrnxf24GRGZqCx2eUlO-GYx1TS6rEgfn06uFFYJup8iu6Q/viewform?usp=sharing&ouid=102655453861620427538" class="submenu-link">
+                                <i class="fa-solid fa-file-pen"></i> Exhibición Gratuita
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-contacto">
+                            Contacto <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-contacto">
+                            <a href="tel:523332363937" class="submenu-link">
+                                <i class="fas fa-phone-alt"></i> Teléfono 332363937
+                            </a>
+                            <a href="mailto:asociacion@dodgeballjalisco.com" class="submenu-link">
+                                <i class="fa-solid fa-envelope"></i> Correo: asociacion@dodgeballjalisco.com
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="SJ-section">
+        <div class="container">
+            <div class="section-titulo">
+                <h1>Selección Jalisco de Dodgeball</h1>
+            </div>
+            <div class="sj-container">
+                <!--tarjeta 1 -->
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-front">
+                            <img src="imagen/SIJ.webp" alt="Selección Infantil">
+                            <h2><i class="fa-solid fa-star" style="color: var(--accent);"></i> Selección Infantil</h2>
+                            <p>Formando campeones del mañana.</p>
+                            <div class="flip-hint">
+                                <i class="fas fa-mouse-pointer"></i>
+                                Haz clic para voltear
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h2>Equipo Estatal</h2>
+                            <p>Infantil</p>
+                            <a href="seleccion.html?jalisco=infantil_menor" class="btn" id="infantil_menor">Menor (7-8 años)</a>
+                            <a href="seleccion.html?jalisco=infantil_intermedio" class="btn" id="infantil_intermedio">Intermedio (9-10 años)</a>
+                            <a href="seleccion.html?jalisco=infantil_mayor" class="btn" id="infantil_mayor">Mayor (11-12 años)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--tarjeta 2 -->
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-front">
+                            <img src="imagen/SJJ.webp" alt="Selección Juveniles">
+                            <h2><i class="fa-solid fa-star" style="color: var(--accent);"></i> Selección Juvenil</h2>
+                            <p>Talento en desarrollo.</p>
+                            <div class="flip-hint">
+                                <i class="fas fa-mouse-pointer"></i>
+                                Haz clic para voltear
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h2>Equipo Estatal</h2>
+                            <p>Juvenil</p>
+                            <a href="seleccion.html?jalisco=juvenil_menor" class="btn" id="Juvenil_menor">Menor (13-15 años)</a>
+                            <a href="seleccion.html?jalisco=juvenil_mayor" class="btn" id="Juvenil_mayor">Mayor (16-18 años)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="card-container">
+                    <div class="card" id="card3">
+                        <div class="card-front">
+                            <img src="imagen/SLJ.webp" alt="Selección Libre">
+                            <h2><i class="fa-solid fa-star" style="color: var(--accent);"></i> Selección Libre</h2>
+                            <p>Élite deportiva de Jalisco</p>
+                            <div class="flip-hint">
+                                <i class="fas fa-mouse-pointer"></i>
+                                Haz clic para voltear
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h2>Equipo Estatal</h2>
+                            <p>Libre (+16 años)</p>
+                            <a href="seleccion.html?jalisco=libre_foam" class="btn" id="libre_foam">Foam (Pelota de esponja)</a>
+                            <a href="seleccion.html?jalisco=libre_cloth" class="btn" id="libre_cloth">Cloth (Pelota de tela)</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tarjeta 4 -->
+                <div class="card-container">
+                    <div class="card" id="card4">
+                        <div class="card-front">
+                            <img src="imagen/SMJ.webp" alt="Selección Masters">
+                            <h2><i class="fa-solid fa-star" style="color: var(--accent);"></i> Selección Masters</h2>
+                            <p>Experiencia y veteranía.</p>
+                            <div class="flip-hint">
+                                <i class="fas fa-mouse-pointer"></i>
+                                Haz clic para voltear
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h2>Equipo Estatal</h2>
+                            <a href="seleccion.html?jalisco=master" class="btn" id="masters">(MASTERS)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-simple">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="mailto:asociacion@dodgeballjalisco.com">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="tel:523332363937">
+                        <i class="fas fa-phone"></i> Teléfono
+                    </a>
+                    <a href="https://wa.me/523332363937?text=Hola%2C%20me%20gustaría%20más%20información%20sobre%20el%20Dodgeball." target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Asociación de Dodgeball Jalisco. Todos los derechos reservados.</p>
+                <p><a href="aviso-privacidad.html" style="color:#aaa; text-decoration: none;">Aviso de Privacidad</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/selecion_jal.js"></script>
+
+    </body>
+</html>

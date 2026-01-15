@@ -1,0 +1,309 @@
+/* =====================================================
+   PRESENTACION.CSS - PÁGINA DE PRESENTACIÓN INSTITUCIONAL
+   Asociación de Dodgeball Jalisco
+   
+   PROPÓSITO:
+   Estilos para la página que muestra la presentación
+   oficial de la asociación embebida mediante iframe.
+   Diseño minimalista centrado en el contenido.
+   
+   TABLA DE CONTENIDOS:
+   1. Contenedor Principal
+   2. Iframe de Presentación
+      2.1. Configuración Base
+      2.2. Dimensiones Responsivas
+   3. Contenedor de Botón
+   4. Responsive Design
+===================================================== */
+
+
+/* =====================================================
+   1. CONTENEDOR PRINCIPAL
+   Layout base de la página
+===================================================== */
+
+/* ----- Contenedor de Presentación ----- */
+/*
+ * Contenedor centrado con ancho máximo
+ * Margen superior para evitar que el header tape el contenido
+ * (Este valor se ajusta con fix-spacing.css)
+ */
+.presentation-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 100px auto 0;
+    padding: 0 20px;
+}
+
+
+/* =====================================================
+   2. IFRAME DE PRESENTACIÓN
+   Configuración del elemento embebido
+===================================================== */
+
+/* =====================================================
+   2.1. CONFIGURACIÓN BASE
+   Estilos principales del iframe
+===================================================== */
+
+/* ----- Iframe Principal ----- */
+/*
+ * Configuración del iframe que contiene la presentación
+ * (Google Slides, PowerPoint Online, etc.)
+ * 
+ * Características:
+ * - Ancho completo del contenedor
+ * - Altura basada en viewport (70vh)
+ * - Sin borde visible
+ * - Centrado con display: block
+ */
+.presentation-iframe {
+    width: 100%;
+    height: 70vh;
+    min-height: 500px;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   2.2. DIMENSIONES RESPONSIVAS
+   Ajustes de tamaño según pantalla
+===================================================== */
+
+/*
+ * ALTURA DINÁMICA:
+ * - Desktop: 70vh (70% del viewport)
+ * - Altura mínima: 500px (garantiza visibilidad)
+ * - Tablet/Móvil: Se ajusta en media queries
+ * 
+ * ANCHO:
+ * - Siempre 100% del contenedor
+ * - Max-width: 1200px (heredado del contenedor)
+ */
+
+
+/* =====================================================
+   3. CONTENEDOR DE BOTÓN
+   Área para botones de navegación
+===================================================== */
+
+/* ----- Contenedor de Botón Centrado ----- */
+/*
+ * Flexbox centrado para botones de acción
+ * (Ej: "Regresar", "Descargar", etc.)
+ * 
+ * Uso de flexbox:
+ * - justify-content: center (horizontalmente)
+ * - align-items: center (verticalmente)
+ */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+    padding: 20px 0;
+}
+
+/*
+ * NOTA: Los estilos del botón (.btn) se heredan
+ * de styles.css - no se redefinen aquí
+ */
+
+
+/* =====================================================
+   4. RESPONSIVE DESIGN
+   Adaptaciones para diferentes tamaños de pantalla
+===================================================== */
+
+/* =====================================================
+   4.1. TABLETS Y MÓVILES (≤768px)
+===================================================== */
+@media (max-width: 768px) {
+    
+    /* --- Contenedor de Presentación --- */
+    /*
+     * Ajustes para tablets:
+     * - Reducir margen superior
+     * - Reducir padding lateral
+     */
+    .presentation-container {
+        margin-top: 90px;
+        padding: 0 10px;
+    }
+
+    /* --- Iframe de Presentación --- */
+    /*
+     * Ajustes de altura para tablets:
+     * - Reducir a 50vh (50% del viewport)
+     * - Altura mínima: 300px
+     * 
+     * Esto permite mejor uso del espacio en
+     * pantallas más pequeñas donde el viewport
+     * vertical es limitado
+     */
+    .presentation-iframe {
+        height: 50vh;
+        min-height: 300px;
+    }
+
+    /* --- Contenedor de Botón --- */
+    /*
+     * Reducir padding lateral en tablets
+     * para aprovechar mejor el espacio
+     */
+    .button-container {
+        padding: 0 10px;
+    }
+}
+
+
+/* =====================================================
+   NOTAS DE IMPLEMENTACIÓN
+===================================================== */
+
+/*
+ * ===== CARACTERÍSTICAS PRINCIPALES =====
+ * 
+ * 1. DISEÑO MINIMALISTA
+ *    - Enfoque en el contenido (iframe)
+ *    - Sin distracciones visuales
+ *    - Centrado y responsivo
+ * 
+ * 2. IFRAME RESPONSIVO
+ *    - Altura dinámica basada en viewport
+ *    - Altura mínima garantizada
+ *    - Ancho siempre completo
+ * 
+ * 3. COMPATIBILIDAD
+ *    - Funciona con Google Slides
+ *    - Funciona con PowerPoint Online
+ *    - Funciona con PDF embebidos
+ *    - Funciona con cualquier contenido iframe
+ * 
+ * ===== ESTRUCTURA HTML ESPERADA =====
+ * 
+ * <div class="presentation-container">
+ *   <iframe 
+ *     class="presentation-iframe" 
+ *     src="[URL_DE_PRESENTACION]"
+ *     allowfullscreen>
+ *   </iframe>
+ * </div>
+ * 
+ * <div class="button-container">
+ *   <a href="principal.html" class="btn btn-blue-primary">
+ *     <i class="fas fa-arrow-left"></i> Regresar
+ *   </a>
+ * </div>
+ * 
+ * ===== CONFIGURACIÓN DEL IFRAME =====
+ * 
+ * Para Google Slides:
+ * - URL: https://docs.google.com/presentation/d/[ID]/embed
+ * - Parámetros opcionales: ?start=false&loop=false&delayms=3000
+ * 
+ * Para PowerPoint Online:
+ * - URL: https://[onedrive]/embed?Item=[ID]&wdAr=1.7777777777777777
+ * 
+ * Atributos recomendados:
+ * - allowfullscreen: Permite pantalla completa
+ * - loading="lazy": Carga diferida (opcional)
+ * 
+ * ===== VARIABLES REQUERIDAS =====
+ * 
+ * Ninguna variable CSS específica requerida.
+ * Los botones usan variables de styles.css:
+ * - var(--primary)
+ * - var(--secondary)
+ * - var(--dark)
+ * 
+ * ===== AJUSTES CON FIX-SPACING.CSS =====
+ * 
+ * El archivo fix-spacing.css ajusta:
+ * - .presentation-container { margin-top: 30px !important; }
+ * 
+ * Esto reduce el espaciado superior excesivo
+ * causado por el header sticky.
+ * 
+ * ===== MEJORAS FUTURAS POSIBLES =====
+ * 
+ * 1. Loading state
+ *    - Spinner mientras carga el iframe
+ *    - Skeleton screen
+ * 
+ * 2. Controles adicionales
+ *    - Botón de descarga PDF
+ *    - Botón de pantalla completa
+ *    - Selector de idioma
+ * 
+ * 3. Metadatos
+ *    - Título de la presentación
+ *    - Fecha de última actualización
+ *    - Número de diapositivas
+ * 
+ * 4. Fallback
+ *    - Mensaje si el iframe no carga
+ *    - Enlace directo alternativo
+ * 
+ * ===== ACCESIBILIDAD =====
+ * 
+ * - Título descriptivo en el iframe
+ * - Contraste adecuado en botones
+ * - Áreas clicables grandes (44x44px mínimo)
+ * - Navegación con teclado funcional
+ * 
+ * ===== RENDIMIENTO =====
+ * 
+ * - Iframe carga de forma asíncrona
+ * - No bloquea el renderizado de la página
+ * - Considerar loading="lazy" para iframes
+ * - Optimizar el contenido dentro del iframe
+ * 
+ * ===== COMPATIBILIDAD DE NAVEGADORES =====
+ * 
+ * - Chrome/Edge: ✓ Completo
+ * - Firefox: ✓ Completo
+ * - Safari: ✓ Completo
+ * - iOS Safari: ✓ Con limitaciones de fullscreen
+ * - Android Chrome: ✓ Completo
+ * 
+ * Notas de Safari iOS:
+ * - Algunos iframes pueden tener problemas de scroll
+ * - Solución: Agregar -webkit-overflow-scrolling: touch
+ * 
+ * ===== SEGURIDAD =====
+ * 
+ * Recomendaciones para el iframe:
+ * - Usar HTTPS siempre
+ * - Validar el origen del contenido
+ * - Considerar sandbox attribute si es contenido externo
+ * - No embeber contenido no confiable
+ * 
+ * Ejemplo con sandbox (opcional):
+ * <iframe sandbox="allow-scripts allow-same-origin" ...>
+ * 
+ * ===== TESTING =====
+ * 
+ * Verificar en:
+ * 1. Desktop (1920x1080, 1366x768)
+ * 2. Tablet (768x1024)
+ * 3. Móvil (375x667, 414x896)
+ * 4. Orientación landscape y portrait
+ * 5. Diferentes navegadores
+ * 
+ * ===== MANTENIMIENTO =====
+ * 
+ * Actualizar si:
+ * - Cambia la URL de la presentación
+ * - Se requieren nuevos controles
+ * - Hay problemas de carga en dispositivos
+ * - Se necesitan ajustes de altura
+ */
+
+
+/* =====================================================
+   FIN DE PRESENTACION.CSS
+===================================================== */

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Deportivo - ADJ</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="imagen/logo-adj.svg">
+    <link rel="icon" type="image/png" href="imagen/logo-adj.png">
+    <link rel="apple-touch-icon" href="imagen/logo-adj.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/calendario.css" />
+    <link rel="stylesheet" href="css/fix-spacing.css" />
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="imagen/logo-adj.svg" alt="Logo Asociación de Dodgeball Jalisco">
+                <span>Dodgeball Jalisco</span>
+            </div>
+        
+            <button class="menu-toggle" 
+                aria-label="botón menu-toggle" 
+                id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-inicio">
+                            Inicio <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-inicio">
+                            <a href="principal.html" class="submenu-link">
+                                <i class="fas fa-home"></i> Página Principal
+                            </a>
+                            <a href="principal.html#nosotros" class="submenu-link">
+                                <i class="fa-solid fa-people-group"></i> Nosotros
+                            </a>
+                            <a href="mvv.html" class="submenu-link">
+                                <i class="fa-solid fa-medal"></i> Nuestros Valores
+                            </a>
+                            <a href="organigrama.html" class="submenu-link">
+                                <i class="fa-solid fa-sitemap"></i> Directiva
+                            </a>
+                            <a href="documentos.html" class="submenu-link">
+                                <i class="fa-solid fa-box-archive"></i> Documentos
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-dodgeball">
+                            Dodgeball <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-dodgeball">
+                            <a href="principal.html#juego" class="submenu-link">
+                                <i class="fa-solid fa-question-circle"></i> ¿Qué es Dodgeball?
+                            </a>
+                            <a href="presentacion.html" class="submenu-link">
+                                <i class="fa-solid fa-binoculars"></i> ¿Cómo se juega?
+                            </a>
+                            <a href="reglamentos.html" class="submenu-link">
+                                <i class="fa-solid fa-book"></i> Reglamento deportivo
+                            </a>
+                            <a href="principal.html#equipos" class="submenu-link">
+                                <i class="fa-solid fa-ranking-star"></i> Clubes y Escuelas
+                            </a>
+                            <a href="principal.html#sedes" class="submenu-link">
+                                <i class="fa-solid fa-location-dot"></i> SEDES
+                            </a>
+                            <a href="seleccion_jal.html" class="submenu-link">
+                                <i class="fa-solid fa-star"></i> Selección Jalisco
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-eventos">
+                            Eventos <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-eventos">
+                            <a href="calendario.html" class="submenu-link">
+                                <i class="fa-solid fa-calendar"></i> Calendario 2026
+                            </a>
+                            <a href="torneos_estatales.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Torneos Estatales
+                            </a>
+                            <a href="torneos_nacionales.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Torneos Nacionales
+                            </a>
+                            <a href="liga_metropolitana.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Liga Metropolitana
+                            </a>
+                            <a href="galeria.html" class="submenu-link">
+                                <i class="fa-solid fa-camera"></i> Galería de Eventos
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-solicitudes">
+                            Solicitudes <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-solicitudes">
+                            <a href="#" onclick="openModal('afiliaciones')" class="submenu-link">
+                                <i class="fa-solid fa-id-card-clip"></i> Afiliaciones
+                            </a>
+                            <a href="#" onclick="openModal('cursos')" class="submenu-link">
+                                <i class="fa-solid fa-file-signature"></i> Curso Arbitraje
+                            </a>
+                            <a href="#" onclick="openModal('cursos')" class="submenu-link">
+                                <i class="fa-solid fa-file-signature"></i> Curso Couches
+                            </a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSXrnxf24GRGZqCx2eUlO-GYx1TS6rEgfn06uFFYJup8iu6Q/viewform?usp=sharing&ouid=102655453861620427538" class="submenu-link">
+                                <i class="fa-solid fa-file-pen"></i> Exhibición Gratuita
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-contacto">
+                            Contacto <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-contacto">
+                            <a href="tel:523332363937" class="submenu-link">
+                                <i class="fas fa-phone-alt"></i> Teléfono 332363937
+                            </a>
+                            <a href="mailto:asociacion@dodgeballjalisco.com" class="submenu-link">
+                                <i class="fa-solid fa-envelope"></i> Correo: asociacion@dodgeballjalisco.com
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenedor principal con dos columnas -->
+    <div class="main-wrapper">
+        <!-- Columna izquierda (2/3) - Calendario -->
+        <div class="calendar-container">
+            <h1 class="section-title"> Calendario Deportivo 2026</h1>
+            <div class="events-list" id="eventsList">
+                <p style="text-align: center;">Cargando...</p>
+            </div>
+        </div>
+
+        <!-- Columna derecha (1/3) - Eventos Destacados -->
+        <aside class="featured-events">
+            <h2 class="featured-title">Eventos Destacados</h2>
+            
+            <div class="featured-card">
+                <div class="featured-image">
+                    <img src="imagen/liga-LMDB.jpg" alt="Liga Metropolitana de Dodgeball Jalisco">
+                </div>
+                <div class="featured-content">
+                    <span class="featured-date">
+                        <i class="far fa-calendar"></i>
+                        21 Feb - 25 Abr 2026
+                    </span>
+                    <h3>Liga Metropolitana</h3>
+                    <p>Competencia abierta para equipos de la zona metropolitana.</p>
+                    <a href="liga_metropolitana.html" class="btn-featured">Más Info</a>
+                </div>
+            </div>
+
+            <div class="featured-card">
+                <div class="featured-image">
+                    <img src="imagen/calendario-nacional.webp" alt="Campeonatos Nacionales 2026">
+                </div>
+                <div class="featured-content">
+                    <h3>Calendario Nacional FMDB</h3>
+                    <a href="imagen/calendario-nacional.jpg" class="btn-featured">ver calendario</a>
+                </div>
+            </div>
+
+            <div class="featured-card">
+                <div class="featured-image">
+                    <img src="imagen/ESTATALES.jpg" alt="Torneos Estatales 2026">
+                </div>
+                <div class="featured-content">
+                    <span class="featured-date">
+                        <i class="far fa-calendar"></i>
+                        Sep - Oct - Nov 2026
+                    </span>
+                    <h3>Torneos Estatales</h3>
+                    <p>Clasificatorios rumbo a nacionales 2027.</p>
+                    <a href="torneos_estatales.html" class="btn-featured">Más Info</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-simple">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="mailto:asociacion@dodgeballjalisco.com">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="tel:523332363937">
+                        <i class="fas fa-phone"></i> Teléfono
+                    </a>
+                    <a href="https://wa.me/523332363937?text=Hola%2C%20me%20gustaría%20más%20información%20sobre%20el%20Dodgeball." target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Asociación de Dodgeball Jalisco. Todos los derechos reservados.</p>
+                <p><a href="aviso-privacidad.html" style="color:#aaa; text-decoration: none;">Aviso de Privacidad</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/calendario.js"></script>
+</body>
+</html>

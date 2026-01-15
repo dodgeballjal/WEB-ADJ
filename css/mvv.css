@@ -1,0 +1,1033 @@
+/* =====================================================
+   MVV.CSS - ESTILOS DE MISIÓN, VISIÓN Y VALORES
+   Asociación de Dodgeball Jalisco
+   
+   TABLA DE CONTENIDOS:
+   1. Variables Específicas
+   2. Hero Section MVV
+   3. Logo Section
+      3.1. Showcase del Logo
+      3.2. Frame e Imagen (con Drag)
+      3.3. Controles de Imagen
+      3.4. Elementos del Logo
+   4. MVV Tabs Section
+      4.1. Header y Navegación
+      4.2. Contenido de Tabs
+      4.3. Paneles (Misión, Visión, Valores)
+   5. Valores Grid
+   6. Botón de Regreso
+   7. Animaciones Específicas
+   8. Responsive Design
+===================================================== */
+
+
+/* =====================================================
+   1. VARIABLES ESPECÍFICAS
+   Colores exclusivos para la página MVV
+===================================================== */
+:root {
+    --mvv-primary: #1a3a8f;      /* Azul principal */
+    --mvv-secondary: #2a9d8f;    /* Verde secundario */
+    --mvv-accent: #fca311;       /* Amarillo/Naranja */
+    --mvv-dark: #1d3557;         /* Azul oscuro */
+    --mvv-mision: #4CAF50;       /* Verde para Misión */
+    --mvv-vision: #2196F3;       /* Azul para Visión */
+    --mvv-valores: #FF9800;      /* Naranja para Valores */
+}
+
+
+/* =====================================================
+   2. HERO SECTION MVV
+   Portada principal con gradiente y contenido centrado
+===================================================== */
+
+/* ----- Contenedor Principal ----- */
+.mvv-hero {
+    padding: 20px 0 80px;
+    background: linear-gradient(135deg, var(--mvv-primary) 0%, var(--mvv-secondary) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ----- Contenido Centrado ----- */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ----- Logo del Hero ----- */
+.hero-logo {
+    margin-bottom: 30px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.hero-logo img {
+    width: 250px;
+    height: auto;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+}
+
+/* ----- Badge (Etiqueta) ----- */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 10px 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    backdrop-filter: blur(10px);
+    animation: fadeInDown 0.8s ease;
+}
+
+.hero-badge i {
+    font-size: 1.2rem;
+    color: #e63946;
+}
+
+.hero-badge span {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* ----- Tipografía del Hero ----- */
+
+/* Título principal */
+.mvv-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    font-weight: 900;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+/* Descripción principal */
+.hero-description {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    opacity: 0.95;
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+/* Llamado a la acción */
+.hero-call {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: var(--mvv-accent);
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+
+/* =====================================================
+   3. LOGO SECTION
+   Sección interactiva del logo con zoom y drag
+===================================================== */
+
+/* ----- Contenedor de la Sección ----- */
+.logo-section {
+    padding: 10px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* ----- Introducción de la Sección ----- */
+.section-intro {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.section-intro:after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--secondary);
+    margin: 15px auto;
+}
+
+.section-intro h2 {
+    font-size: 2.5rem;
+    color: var(--mvv-primary);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.section-intro p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section-sub-intro {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+
+/* =====================================================
+   3.1. SHOWCASE DEL LOGO
+   Layout de dos columnas: imagen y elementos
+===================================================== */
+.logo-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+
+/* =====================================================
+   3.2. FRAME E IMAGEN (CON FUNCIONALIDAD DRAG)
+   Imagen interactiva con zoom y arrastre
+===================================================== */
+
+/* ----- Wrapper con posición sticky ----- */
+.logo-image-wrapper {
+    position: sticky;
+    top: 120px;
+}
+
+/* ----- Frame de la Imagen ----- */
+.logo-frame {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Línea de gradiente superior */
+.logo-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--mvv-primary), var(--mvv-secondary), var(--mvv-accent));
+}
+
+/* ----- Imagen con Funcionalidad de Arrastre ----- */
+.logo-frame img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.1s ease-out;
+    cursor: default;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Estado ampliado - cursor grab */
+.logo-frame img.zoomed {
+    cursor: grab;
+    transform-origin: center center;
+}
+
+/* Estado arrastrando - cursor grabbing */
+.logo-frame img.dragging {
+    cursor: grabbing;
+    transition: none;
+}
+
+/* ----- Hint de Arrastre ----- */
+.drag-hint {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(26, 58, 143, 0.95);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0;
+    animation: fadeInOut 4s ease-in-out 1s;
+    pointer-events: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.drag-hint i {
+    font-size: 1.1rem;
+    color: var(--mvv-accent);
+}
+
+/* Animación del hint */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+}
+
+
+/* =====================================================
+   3.3. CONTROLES DE IMAGEN
+   Botones para zoom in, zoom out y reset
+===================================================== */
+.image-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* ----- Botón de Control ----- */
+.control-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: white;
+    color: var(--mvv-primary);
+    border: 2px solid var(--mvv-primary);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background: var(--mvv-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 58, 143, 0.3);
+}
+
+.control-btn i {
+    font-size: 1.1rem;
+}
+
+
+/* =====================================================
+   3.4. ELEMENTOS DEL LOGO
+   Tarjetas explicativas de cada elemento
+===================================================== */
+.logo-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ----- Tarjeta de Elemento ----- */
+.element-card {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 20px;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.element-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Tarjeta destacada */
+.element-card.highlight {
+    background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+    border-left-color: var(--mvv-accent);
+}
+
+/* ----- Icono del Elemento ----- */
+.element-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 2rem;
+    color: white;
+    flex-shrink: 0;
+    background: white;
+    border: 3px solid #e9ecef;
+    transition: border-color 0.3s ease;
+}
+
+/* Imagen dentro del icono */
+.element-icon .icon-image {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain;    
+}
+
+/* Variantes de color del icono */
+
+.element-icon.fire {
+    background: linear-gradient(135deg, #FF5722, #D84315);
+}
+
+/* ----- Contenido del Elemento ----- */
+.element-content h3 {
+    color: var(--mvv-primary);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.element-content p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+/* Texto destacado */
+.highlight-text {
+    color: var(--mvv-accent);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+
+/* =====================================================
+   4. MVV TABS SECTION
+   Sistema de pestañas para Misión, Visión, Valores
+===================================================== */
+
+/* ----- Contenedor Principal ----- */
+.mvv-tabs-section {
+    padding: 80px 0;
+    background: white;
+}
+
+
+/* =====================================================
+   4.1. HEADER Y NAVEGACIÓN
+   Título de la sección y botones de pestañas
+===================================================== */
+
+/* ----- Header de Tabs ----- */
+.tabs-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.tabs-header h2 {
+    font-size: 2.5rem;
+    color: var(--mvv-primary);
+    margin-bottom: 15px;
+}
+
+.tabs-header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.tabs-subheader {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    justify-content: center;
+    text-align: center;
+}
+
+.tabs-header:after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--secondary);
+    margin: 15px auto;
+}
+
+/* ----- Navegación de Tabs ----- */
+.tabs-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+/* ----- Botón de Tab ----- */
+.tab-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 25px 40px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 3px solid transparent;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--mvv-dark);
+}
+
+.tab-btn i {
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.tab-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Estado activo del botón */
+.tab-btn.active1 {
+    background: linear-gradient(135deg, var(--green-logo), #4CAF50);
+    color: white;
+}
+
+.tab-btn.active1 i {
+    transform: scale(1.1);
+}
+
+.tab-btn.active2 {
+    background: linear-gradient(135deg, #FFC107, var(--mvv-valores));
+    color: white;
+}
+
+.tab-btn.active2 i {
+    transform: scale(1.1);
+}
+
+.tab-btn.active3 {
+    background: linear-gradient(135deg, var(--mvv-dark), var(--mvv-vision));
+    color: white;
+}
+
+.tab-btn.active3 i {
+    transform: scale(1.1);
+}
+
+
+
+/* =====================================================
+   4.2. CONTENIDO DE TABS
+   Contenedor de paneles
+===================================================== */
+.tabs-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ----- Panel Individual ----- */
+.tab-panel {
+    display: none;
+    animation: fadeInUp 0.5s ease;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+
+/* =====================================================
+   4.3. PANELES (MISIÓN, VISIÓN, VALORES)
+   Diseño de cada panel de contenido
+===================================================== */
+
+/* ----- Header del Panel ----- */
+.panel-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 15px 15px 0 0;
+    color: white;
+}
+
+/* Colores por tipo de panel */
+.panel-header.mision-color {
+    background: linear-gradient(135deg, var(--mvv-mision), #2E7D32);
+}
+
+.panel-header.vision-color {
+    background: linear-gradient(135deg, var(--mvv-valores), var(--mvv-accent));
+}
+
+.panel-header.valores-color {
+    background: linear-gradient(135deg, var(--mvv-vision), #1565C0); 
+}
+
+/* Icono del panel */
+.panel-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    font-size: 2.5rem;
+    backdrop-filter: blur(10px);
+}
+
+/* Título del panel */
+.panel-header h3 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* ----- Cuerpo del Panel ----- */
+.panel-body {
+    padding: 40px;
+    background: #f8f9fa;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto principal destacado */
+.lead-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--mvv-dark);
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Párrafos del panel */
+.panel-body p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* ----- Puntos Clave ----- */
+.key-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Punto clave individual */
+.key-point {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.key-point:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.key-point i {
+    font-size: 1.5rem;
+    color: var(--mvv-secondary);
+}
+
+.key-point span {
+    font-weight: 600;
+    color: var(--mvv-dark);
+}
+
+
+/* =====================================================
+   5. VALORES GRID
+   Grid especial para la sección de valores
+===================================================== */
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* ----- Tarjeta de Valor ----- */
+.valor-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.valor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ----- Icono del Valor ----- */
+.valor-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: white;
+}
+
+/* ----- Título del Valor ----- */
+.valor-card h4 {
+    font-size: 1.3rem;
+    color: var(--mvv-primary);
+    margin-bottom: 15px;
+}
+
+/* ----- Descripción del Valor ----- */
+.valor-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   6. BOTÓN DE REGRESO
+   Botón para volver a la página principal
+===================================================== */
+.back-button-container {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 40px;
+    background: var(--secondary);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 5px 20px rgba(26, 58, 143, 0.3);
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(26, 58, 143, 0.4);
+}
+
+
+/* =====================================================
+   7. ANIMACIONES ESPECÍFICAS
+   Animaciones personalizadas para MVV
+===================================================== */
+
+/* ----- Fade In Down ----- */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ----- Fade In Up ----- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   8. RESPONSIVE DESIGN
+   Adaptaciones para diferentes tamaños de pantalla
+===================================================== */
+
+/* ----- Tablets (≤992px) ----- */
+@media (max-width: 992px) {
+    
+    /* --- Hero --- */
+    .mvv-hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-description {
+        font-size: 1.15rem;
+    }
+
+    .hero-call {
+        font-size: 1.05rem;
+    }
+
+    /* --- Logo Showcase --- */
+    /* Cambiar a una columna */
+    .logo-showcase {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* Quitar sticky en tablets */
+    .logo-image-wrapper {
+        position: relative;
+        top: 0;
+    }
+
+    /* --- Títulos --- */
+    .section-intro h2 {
+        font-size: 2rem;
+    }
+
+    .tabs-header h2 {
+        font-size: 2rem;
+    }
+}
+
+/* ----- Móviles (≤768px) ----- */
+@media (max-width: 768px) {
+    
+    /* --- Hero --- */
+    .mvv-hero {
+        padding: 120px 0 60px;
+    }
+
+    .mvv-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-call {
+        font-size: 0.95rem;
+    }
+
+    /* --- Logo --- */
+    .logo-section {
+        padding: 60px 0;
+    }
+
+    .section-intro {
+        margin-bottom: 40px;
+    }
+
+    .section-intro h2 {
+        font-size: 1.8rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .section-intro p {
+        font-size: 1rem;
+    }
+
+    /* --- Frame --- */
+    .logo-frame {
+        padding: 20px;
+    }
+
+    /* --- Controles --- */
+    .image-controls {
+        flex-direction: column;
+    }
+
+    .control-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* --- Elementos --- */
+    .element-card {
+        grid-template-columns: 60px 1fr;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .element-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .element-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .element-content p {
+        font-size: 0.95rem;
+    }
+
+    /* --- Tabs --- */
+    .mvv-tabs-section {
+        padding: 60px 0;
+    }
+
+    .tabs-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .tabs-navigation {
+        gap: 10px;
+    }
+
+    .tab-btn {
+        padding: 20px 25px;
+        font-size: 0.9rem;
+    }
+
+    .tab-btn i {
+        font-size: 1.5rem;
+    }
+
+    /* --- Panel --- */
+    .panel-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .panel-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+
+    .panel-header h3 {
+        font-size: 1.6rem;
+    }
+
+    .panel-body {
+        padding: 25px;
+    }
+
+    .lead-text {
+        font-size: 1.1rem;
+    }
+
+    .panel-body p {
+        font-size: 1rem;
+    }
+
+    /* --- Key Points y Valores --- */
+    .key-points {
+        grid-template-columns: 1fr;
+    }
+
+    .valores-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Botón --- */
+    .back-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}
+
+/* ----- Móviles Pequeños (≤576px) ----- */
+@media (max-width: 576px) {
+    
+    /* --- Hero --- */
+    .mvv-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-logo img {
+        width: 100px;
+    }
+
+    .hero-badge {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* --- Títulos --- */
+    .section-intro h2 {
+        font-size: 1.5rem;
+    }
+
+    .tabs-header h2 {
+        font-size: 1.5rem;
+    }
+
+    /* --- Tabs --- */
+    .tab-btn {
+        padding: 15px 20px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* --- Panel --- */
+    .panel-header h3 {
+        font-size: 1.4rem;
+    }
+
+    /* --- Valores --- */
+    .valor-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+
+    .valor-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .valor-card p {
+        font-size: 0.95rem;
+    }
+
+    /* --- Drag Hint --- */
+    .drag-hint {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+
+    /* Ocultar texto en móviles pequeños */
+    .drag-hint span {
+        display: none;
+    }
+
+    .drag-hint i {
+        font-size: 1.3rem;
+    }
+}
+
+
+/* =====================================================
+   FIN DE MVV.CSS
+===================================================== */

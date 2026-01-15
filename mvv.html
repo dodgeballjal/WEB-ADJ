@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - ADJ</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="imagen/logo-adj.svg">
+    <link rel="icon" type="image/png" href="imagen/logo-adj.png">
+    <link rel="apple-touch-icon" href="imagen/logo-adj.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mvv.css">
+    <link rel="stylesheet" href="css/fix-spacing.css">
+</head>
+<body>
+      <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="imagen/logo-adj.svg" alt="Logo Asociación de Dodgeball Jalisco">
+                <span>Dodgeball Jalisco</span>
+            </div>
+        
+            <button class="menu-toggle" 
+                aria-label="botón menu-toggle" 
+                id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-inicio">
+                            Inicio <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-inicio">
+                            <a href="principal.html" class="submenu-link">
+                                <i class="fas fa-home"></i> Página Principal
+                            </a>
+                            <a href="principal.html#nosotros" class="submenu-link">
+                                <i class="fa-solid fa-people-group"></i> Nosotros
+                            </a>
+                            <a href="mvv.html" class="submenu-link">
+                                <i class="fa-solid fa-medal"></i> Nuestros Valores
+                            </a>
+                            <a href="organigrama.html" class="submenu-link">
+                                <i class="fa-solid fa-sitemap"></i> Directiva
+                            </a>
+                            <a href="documentos.html" class="submenu-link">
+                                <i class="fa-solid fa-box-archive"></i> Documentos
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-dodgeball">
+                            Dodgeball <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-dodgeball">
+                            <a href="principal.html#juego" class="submenu-link">
+                                <i class="fa-solid fa-question-circle"></i> ¿Qué es Dodgeball?
+                            </a>
+                            <a href="presentacion.html" class="submenu-link">
+                                <i class="fa-solid fa-binoculars"></i> ¿Cómo se juega?
+                            </a>
+                            <a href="reglamentos.html" class="submenu-link">
+                                <i class="fa-solid fa-book"></i> Reglamento deportivo
+                            </a>
+                            <a href="principal.html#equipos" class="submenu-link">
+                                <i class="fa-solid fa-ranking-star"></i> Clubes y Escuelas
+                            </a>
+                            <a href="principal.html#sedes" class="submenu-link">
+                                <i class="fa-solid fa-location-dot"></i> SEDES
+                            </a>
+                            <a href="seleccion_jal.html" class="submenu-link">
+                                <i class="fa-solid fa-star"></i> Selección Jalisco
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-eventos">
+                            Eventos <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-eventos">
+                            <a href="calendario.html" class="submenu-link">
+                                <i class="fa-solid fa-calendar"></i> Calendario 2026
+                            </a>
+                            <a href="torneos_estatales.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Torneos Estatales
+                            </a>
+                            <a href="torneos_nacionales.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Torneos Nacionales
+                            </a>
+                            <a href="liga_metropolitana.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Liga Metropolitana
+                            </a>
+                            <a href="galeria.html" class="submenu-link">
+                                <i class="fa-solid fa-camera"></i> Galería de Eventos
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-solicitudes">
+                            Solicitudes <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-solicitudes">
+                            <a href="#" onclick="openModal('afiliaciones')" class="submenu-link">
+                                <i class="fa-solid fa-id-card-clip"></i> Afiliaciones
+                            </a>
+                            <a href="#" onclick="openModal('cursos')" class="submenu-link">
+                                <i class="fa-solid fa-file-signature"></i> Curso Arbitraje
+                            </a>
+                            <a href="#" onclick="openModal('cursos')" class="submenu-link">
+                                <i class="fa-solid fa-file-signature"></i> Curso Couches
+                            </a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSXrnxf24GRGZqCx2eUlO-GYx1TS6rEgfn06uFFYJup8iu6Q/viewform?usp=sharing&ouid=102655453861620427538" class="submenu-link">
+                                <i class="fa-solid fa-file-pen"></i> Exhibición Gratuita
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-contacto">
+                            Contacto <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-contacto">
+                            <a href="tel:523332363937" class="submenu-link">
+                                <i class="fas fa-phone-alt"></i> Teléfono 332363937
+                            </a>
+                            <a href="mailto:asociacion@dodgeballjalisco.com" class="submenu-link">
+                                <i class="fa-solid fa-envelope"></i> Correo: asociacion@dodgeballjalisco.com
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="mvv-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <img src="imagen/logo-adj.svg" alt="Logo ADJ">
+                </div>
+                <h1>Principios y Valores ADJ</h1>
+                <div class="hero-badge">
+                    <i class="fas fa-heart"></i>
+                    <span>Nuestra Identidad</span>
+                </div>
+                <p class="hero-description">
+                    En la Asociación de Dodgeball Jalisco tenemos principios y objetivos claros que plasmamos en nuestra imagen representativa. Cada elemento de nuestro logo cuenta una historia, refleja nuestros valores y representa nuestro compromiso con el deporte y la comunidad.
+                </p>
+                <p class="hero-call">
+                    Aspiramos a que todos los miembros de la asociación se identifiquen con estos valores y sean parte de ellos, formando una comunidad unida por la pasión del dodgeball y el desarrollo integral de las personas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Section -->
+    <section class="logo-section">
+        <div class="container">
+            <div class="section-intro">
+                <h2>
+                    Nuestro Logo, Nuestra Identidad
+                </h2>
+            </div>
+            <div class="section-sub-intro">
+                <p>Cada elemento tiene un significado profundo que representa nuestra identidad jalisciense y nuestra pasión por el dodgeball</p>
+            </div>
+
+            <div class="logo-showcase">
+                <div class="logo-image-wrapper">
+                    <div class="logo-frame">
+                        <img src="imagen/radiografiaadj.webp" alt="Radiografía del Logo ADJ" id="logoImage">
+                        <div class="drag-hint">
+                            <i class="fas fa-hand-paper"></i>
+                            <span>Amplía la imagen y arrástrala con el cursor</span>
+                        </div>
+                    </div>
+                    <div class="image-controls">
+                        <button class="control-btn" onclick="zoomImage('in')">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Ampliar</span>
+                        </button>
+                        <button class="control-btn" onclick="zoomImage('out')">
+                            <i class="fas fa-search-minus"></i>
+                            <span>Reducir</span>
+                        </button>
+                        <button class="control-btn" onclick="resetImage()">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Restablecer</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="logo-elements">
+                    <div class="element-card">
+                        <div class="element-icon">
+                            <img src="imagen/ico-adj/ico-adj.svg" alt="ADJ" class="icon-image">
+                        </div>
+                        <div class="element-content">
+                            <h3>ADJ</h3>
+                            <p>Las siglas de <strong>Asociación de Dodgeball Jalisco</strong> se presentan en azul y amarillo, los colores de la bandera de Jalisco (azul y oro).</p>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-icon">
+                            <img src="imagen/ico-adj/ico-triangulo.svg" alt="Triangulo" class="icon-image">
+                        </div>
+                        <div class="element-content">
+                            <h3>Triángulo Equilátero</h3>
+                            <p>Apunta hacia arriba en <strong>señal de victoria</strong>, representa la letra "A" de "asociación". El triángulo simboliza el <strong>equilibrio</strong> entre cuerpo, mente y valores. El color verde representa equilibrio y armonía en el deporte.</p>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-icon">
+                            <img src="imagen/ico-adj/ico-maguey.svg" alt="Maguey" class="icon-image">
+                        </div>
+                        <div class="element-content">
+                            <h3>Maguey</h3>
+                            <p>Las hojas del agave tequilero en color azul verdoso emanan de la base del triángulo y representan nuestro <strong>origen jalisciense</strong>, conectándonos con nuestra tierra.</p>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-icon">
+                            <img src="imagen/ico-adj/ico-D.svg" alt="letra D" class="icon-image">
+                        </div>
+                        <div class="element-content">
+                            <h3>Letra D</h3>
+                            <p>Inicial de <strong>Dodgeball</strong> y de <strong>Deporte</strong>. Es el medio para alcanzar nuestros fines: crear grandes deportistas y, más importante aún, <strong>forjar hombres y mujeres de bien</strong> para nuestra sociedad.</p>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-icon">
+                            <img src="imagen/ico-adj/ico-pelota.svg" alt="Pelota" class="icon-image">
+                        </div>
+                        <div class="element-content">
+                            <h3>Pelota de Dodgeball</h3>
+                            <p>Círculo rojo envuelto en una estela de azul y amarillo, simulando una pelota en trayectoria <strong>ardiendo en llamas</strong>. El color rojo representa la <strong>pasión</strong> por el dodgeball.</p>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-icon">
+                            <img src="imagen/ico-adj/ico-jota.svg" alt="J" class="icon-image">
+                        </div>
+                        <div class="element-content">
+                            <h3>Letra J</h3>
+                            <p>Representa la inicial del estado que con orgullo representamos: <strong>"Jalisco"</strong>. Es nuestra identidad y compromiso con nuestra tierra.</p>
+                        </div>
+                    </div>
+
+                    <div class="element-card highlight">
+                        <div class="element-icon">
+                            <img src="imagen/ico-adj/ico-deporte.svg" alt="Deporte" class="icon-image">
+                        </div>
+                        <div class="element-content">
+                            <h3>D + Pelota</h3>
+                            <p>Este conjunto representa al dodgeball emergiendo de las entrañas del deporte.</p>
+                            <p class="highlight-text"><strong>¡Un nuevo deporte ha nacido en el estado de Jalisco!</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MVV Tabs Section -->
+    <section class="mvv-tabs-section">
+        <div class="container">
+            <div class="tabs-header">
+                <h2>Nuestro Compromiso</h2>
+            </div>
+            <div class="tabs-subheader">
+                <p>Conoce nuestra misión, visión y los valores que nos guían</p>
+            </div>
+
+            <div class="tabs-navigation">
+                <button class="tab-btn active1" data-tab="mision">
+                    <i class="fas fa-rocket"></i>
+                    <span>Misión</span>
+                </button>
+                <button class="tab-btn active2" data-tab="vision">
+                    <i class="fas fa-binoculars"></i>
+                    <span>Visión</span>
+                </button>
+                <button class="tab-btn active3" data-tab="valores">
+                    <i class="fas fa-gem"></i>
+                    <span>Valores</span>
+                </button>
+            </div>
+
+            <div class="tabs-content">
+                <!-- Misión Tab -->
+                <div class="tab-panel active" id="mision">
+                    <div class="panel-header mision-color">
+                        <div class="panel-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Nuestra Misión</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p class="lead-text">
+                            Regular, fomentar y desarrollar el deporte del dodgeball en Jalisco como su representante oficial, integrando a la comunidad deportiva para impulsar su práctica ordenada, competitiva y de alto rendimiento.
+                        </p>
+                        <p>
+                            Nos dedicamos a formar deportistas íntegros, cultivando el equilibrio entre cuerpo, mente y valores, con el fin último de forjar hombres y mujeres de bien que contribuyan positivamente a la sociedad jalisciense.
+                        </p>
+                        <div class="key-points">
+                            <div class="key-point">
+                                <i class="fas fa-trophy"></i>
+                                <span>Alto rendimiento deportivo</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="fas fa-users"></i>
+                                <span>Integración comunitaria</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="fas fa-balance-scale"></i>
+                                <span>Desarrollo integral</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visión Tab -->
+                <div class="tab-panel" id="vision">
+                    <div class="panel-header vision-color">
+                        <div class="panel-icon">
+                            <i class="fas fa-binoculars"></i>
+                        </div>
+                        <h3>Nuestra Visión</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p class="lead-text">
+                            Consolidarnos como la institución líder y referente del dodgeball en México, reconocida por nuestra identidad jalisciense, nuestra pasión por el deporte y nuestra capacidad para desarrollar atletas de excelencia.
+                        </p>
+                        <p>
+                            Aspiramos a que el dodgeball se consolide como un deporte emblemático del estado, proyectando a Jalisco con éxito en competencias nacionales e internacionales, siempre guiados por los principios del movimiento olímpico y operando con transparencia y legitimidad.
+                        </p>
+                        <div class="key-points">
+                            <div class="key-point">
+                                <i class="fas fa-star"></i>
+                                <span>Liderazgo nacional</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="fas fa-globe-americas"></i>
+                                <span>Proyección internacional</span>
+                            </div>
+                            <div class="key-point">
+                                <i class="fas fa-medal"></i>
+                                <span>Excelencia deportiva</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Valores Tab -->
+                <div class="tab-panel" id="valores">
+                    <div class="panel-header valores-color">
+                        <div class="panel-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3>Nuestros Valores</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p class="lead-text">
+                            Los valores que nos definen y guían cada una de nuestras acciones como asociación:
+                        </p>
+                        
+                        <div class="valores-grid">
+                            <div class="valor-card">
+                                <div class="valor-icon" style="background: linear-gradient(135deg, #4CAF50, #2E7D32);">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <h4>Equilibrio y Armonía</h4>
+                                <p>Promovemos el desarrollo integral del deportista, fomentando la armonía entre su condición física, mental y sus principios éticos.</p>
+                            </div>
+
+                            <div class="valor-card">
+                                <div class="valor-icon" style="background: linear-gradient(135deg, #FF5722, #D84315);">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <h4>Pasión y Energía</h4>
+                                <p>Actuamos con el entusiasmo y compromiso que caracteriza a nuestra comunidad, impulsando el dodgeball con dinamismo y dedicación.</p>
+                            </div>
+
+                            <div class="valor-card">
+                                <div class="valor-icon" style="background: linear-gradient(135deg, #2196F3, #1565C0);">
+                                    <i class="fas fa-flag"></i>
+                                </div>
+                                <h4>Orgullo Jalisciense</h4>
+                                <p>Nos sentimos profundamente arraigados a nuestra tierra, representando con honor la identidad, cultura y colores de Jalisco.</p>
+                            </div>
+
+                            <div class="valor-card">
+                                <div class="valor-icon" style="background: linear-gradient(135deg, #9C27B0, #6A1B9A);">
+                                    <i class="fas fa-hand-fist"></i>
+                                </div>
+                                <h4>Juego Limpio y Ética</h4>
+                                <p>Sustentamos nuestra práctica en la integridad, el fair play y la lucha activa contra el dopaje y cualquier conducta antideportiva.</p>
+                            </div>
+
+                            <div class="valor-card">
+                                <div class="valor-icon" style="background: linear-gradient(135deg, #FF9800, #EF6C00);">
+                                    <i class="fas fa-equals"></i>
+                                </div>
+                                <h4>Inclusión y No Discriminación</h4>
+                                <p>Garantizamos un ambiente donde prevalezca la igualdad de oportunidades, rechazando toda forma de discriminación.</p>
+                            </div>
+
+                            <div class="valor-card">
+                                <div class="valor-icon" style="background: linear-gradient(135deg, #00BCD4, #0097A7);">
+                                    <i class="fas fa-hands-holding-circle"></i>
+                                </div>
+                                <h4>Unidad y Cooperación</h4>
+                                <p>Fortalecemos el tejido deportivo mediante el trabajo en conjunto, el apoyo mutuo y la solidaridad entre todos.</p>
+                            </div>
+
+                            <div class="valor-card">
+                                <div class="valor-icon" style="background: linear-gradient(135deg, #607D8B, #455A64);">
+                                    <i class="fas fa-file-circle-check"></i>
+                                </div>
+                                <h4>Transparencia y Legalidad</h4>
+                                <p>Actuamos con honestidad y rendición de cuentas, en estricto apego a nuestro estatuto, reglamentos y normativa aplicable.</p>
+                            </div>
+
+                            <div class="valor-card">
+                                <div class="valor-icon" style="background: linear-gradient(135deg, #FFC107, #FFA000);">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h4>Innovación y Liderazgo</h4>
+                                <p>Abrazamos nuestro espíritu pionero para impulsar el crecimiento y la profesionalización del dodgeball como referente deportivo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="back-button-container">
+                <a href="principal.html#nosotros" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Volver a Inicio</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-simple">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="mailto:asociacion@dodgeballjalisco.com">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="tel:523332363937">
+                        <i class="fas fa-phone"></i> Teléfono
+                    </a>
+                    <a href="https://wa.me/523332363937?text=Hola%2C%20me%20gustaría%20más%20información%20sobre%20el%20Dodgeball." target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Asociación de Dodgeball Jalisco. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/mvv.js"></script>
+    <!-- ===== MODAL EN CONSTRUCCIÓN ===== -->
+    <div id="modalOverlay" class="modal-overlay" onclick="closeModalIfOutside(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <button 
+                    type="button"
+                    class="modal-close" 
+                    onclick="closeModal()"
+                    aria-label="Cerrar modal">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h2 id="modalTitle">Sección en Construcción</h2>
+                <p id="modalSubtitle">Próximamente disponible</p>
+            </div>
+
+            <div class="modal-body">
+                <div id="modalContent"></div>
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>¡Gracias por tu interés!</h3>
+                    <p>Te notificaremos cuando esta sección esté disponible.</p>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+                        Revisa tu email para confirmar el registro.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

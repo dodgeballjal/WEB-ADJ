@@ -1,0 +1,230 @@
+
+/* =====================================================
+1. SECCIÓN PRINCIPAL
+Contenedor general con gradiente de fondo
+===================================================== */
+.SJ-section {
+    padding: 140px 0 60px;
+    background: white;
+    min-height: 100vh;
+}
+
+/* =====================================================
+2. HEADER DE LA SECCIÓN
+Título y subtítulo centrados
+===================================================== */
+.section-titulo {
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* ----- Título Principal ----- */
+.section-titulo h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.section-titulo icon{
+    color: var(--acent);
+}
+
+.section-titulo h1:after {
+    content: '';
+    display: block;
+    width: 200px;
+    height: 4px;
+    background: var(--secondary);
+    margin: 15px auto;
+}
+
+/* ----- Subtítulo ----- */
+.section-titulo .subtitle {
+    font-size: 2.2rem;
+    opacity: 0.9;
+    color: var(--accent);
+}
+
+.sj-container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.card-container {
+    width: 400px;
+    height: 400px;
+    perspective: 1000px;
+    margin-bottom: 5px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .8s cubic-bezier(0.175, 0.885, 0.32, 1.05);
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    
+}
+
+.card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Separamos los estilos que ya no deben ser iguales */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    border: 4px solid var(--accent);
+    overflow: hidden; /* Esto es clave para que la imagen no se salga de las esquinas redondeadas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-front {
+    background: var(--lightgray);
+    color: #333;
+    padding: 0; /* QUITAMOS el padding para que la imagen llegue al borde */
+    justify-content: flex-start; /* Alineamos el contenido al inicio (arriba) */
+}
+
+.card-back {
+    background: linear-gradient(45deg, #2c3e50, #4a6491);
+    color: white;
+    transform: rotateY(180deg);
+    padding: 30px; /* El respaldo sí mantiene su padding */
+    justify-content: center;
+}
+
+.card-front img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 0px;
+    
+    /* Efecto desenfoque */
+    filter: blur(1px) brightness(0.7);
+    transition: filter 0.4s ease-in-out; 
+}
+
+/* 2. Cuando pasas el mouse por la tarjeta, la imagen retoma su COLOR */
+.card:hover .card-front img {
+    filter: blur(0) brightness(1);
+}
+
+.card-front h2 {
+    font-size: 1.8rem;
+    margin-bottom: 3px;
+    text-align: center;
+    color: var(--primary);
+}
+
+.card-front h2:after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 1.5px;
+    background: var(--secondary);
+    margin: 5px auto;
+}
+
+.card-front p {
+    text-align: center;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.flip-hint {
+    position: absolute;
+    bottom: 20px;
+    background: rgba(106, 17, 203, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #6a11cb;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+    backface-visibility: hidden;
+}
+
+.card.flipped .flip-hint {
+        opacity: 0;
+        pointer-events: none;
+}
+
+.card-back h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.card-back p {
+    text-align: center;
+    line-height: 2.6;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: #4fc3f7;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    width: 280px;           /* Un ancho fijo para que todos sean iguales */
+    text-align: center;     /* Centra el texto dentro del botón */
+    box-sizing: border-box; /* Evita que el padding ensanche el botón de más */
+    display: block;         /* Permite que el botón se comporte como un bloque */
+    margin-left: auto;      /* Estos dos márgenes centran el botón */
+    margin-right: auto;
+    text-decoration: none;    /* Quita el subrayado de los enlaces */
+    transition: all 0.4s ease, text-shadow 0.5s ease;
+    text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+}
+
+.btn:hover {
+    background: #29b6f6;
+    transform: translateY(-3px);
+    
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+}

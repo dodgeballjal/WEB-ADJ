@@ -1,0 +1,711 @@
+/* =====================================================
+   GALERIA-DETALLE.CSS - PÁGINA DE DETALLE DE EVENTO
+   Asociación de Dodgeball Jalisco
+   
+   PROPÓSITO:
+   Estilos para la página de detalle de cada evento que
+   muestra todas las fotografías del evento en un grid
+   con funcionalidad de lightbox/modal para ver imágenes
+   en tamaño completo.
+   
+   TABLA DE CONTENIDOS:
+   1. Contenedor Principal
+   2. Header de Galería
+      2.1. Títulos y Metadata
+      2.2. Contador de Imágenes
+   3. Controles de Navegación
+   4. Grid de Galería
+      4.1. Estructura Base
+      4.2. Contenedor de Imagen
+      4.3. Efectos Hover
+   5. Sistema de Carga
+      5.1. Spinner
+      5.2. Animación
+   6. Modal (Lightbox)
+      6.1. Overlay y Contenedor
+      6.2. Imagen en Modal
+      6.3. Botón de Cerrar
+      6.4. Botones de Navegación
+      6.5. Controles del Footer
+      6.6. Botón de Descarga
+      6.7. Información de Imagen
+   7. Mensajes de Error
+   8. Responsive Design
+===================================================== */
+
+
+/* =====================================================
+   1. CONTENEDOR PRINCIPAL
+   Layout base de la página de detalle
+===================================================== */
+
+/* ----- Main Content ----- */
+/*
+ * Espaciado principal para la página
+ * El padding superior se ajusta con fix-spacing.css
+ */
+.main-content {
+    flex: 1;
+    padding: 140px 0 60px;
+}
+
+
+/* =====================================================
+   2. HEADER DE GALERÍA
+   Información del evento y metadata
+===================================================== */
+
+/* ----- Contenedor del Header ----- */
+.gallery-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+/* =====================================================
+   2.1. TÍTULOS Y METADATA
+   Información principal del evento
+===================================================== */
+
+/* ----- Título Principal (Nombre del Evento) ----- */
+.gallery-header h1 {
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* ----- Subtítulo (Fecha del Evento) ----- */
+.gallery-header h2 {
+    color: var(--dark);
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   2.2. CONTADOR DE IMÁGENES
+   Muestra la cantidad total de fotos
+===================================================== */
+#image-count {
+    color: #666;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+
+/* =====================================================
+   3. CONTROLES DE NAVEGACIÓN
+   Botones para navegar y descargar
+===================================================== */
+
+/* ----- Contenedor de Controles ----- */
+.nav-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+/* ----- Botón de Navegación ----- */
+/*
+ * Botones para regresar, descargar todas, etc.
+ */
+.btn-nav {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Estado hover */
+.btn-nav:hover {
+    background-color: var(--dark);
+}
+
+/* ----- Variante Secundaria ----- */
+/*
+ * Botón con color secundario (rojo)
+ */
+.btn-nav.secondary {
+    background-color: var(--secondary);
+}
+
+
+/* =====================================================
+   4. GRID DE GALERÍA
+   Sistema de cuadrícula para mostrar imágenes
+===================================================== */
+
+/* =====================================================
+   4.1. ESTRUCTURA BASE
+   Grid responsivo automático
+===================================================== */
+
+/* ----- Grid Principal ----- */
+/*
+ * Grid que se adapta automáticamente
+ * Mínimo: 250px por columna
+ * Máximo: 1fr (fracción del espacio disponible)
+ */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+
+/* =====================================================
+   4.2. CONTENEDOR DE IMAGEN
+   Tarjeta individual para cada foto
+===================================================== */
+
+/* ----- Contenedor Base ----- */
+/*
+ * Aspect ratio 1:1 (cuadrado)
+ * Padding blanco para efecto de marco
+ */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    aspect-ratio: 1;
+    background-color: #ddd;
+    cursor: pointer;
+    padding: 3px;
+    background: white;
+}
+
+/* ----- Imagen Dentro del Contenedor ----- */
+/*
+ * Object-fit: cover para llenar el espacio
+ * Transición suave para zoom
+ */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+
+/* =====================================================
+   4.3. EFECTOS HOVER
+   Interacciones al pasar el mouse
+===================================================== */
+
+/* ----- Hover en Contenedor ----- */
+/*
+ * Elevación de la tarjeta
+ */
+.image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* ----- Hover en Imagen ----- */
+/*
+ * Zoom ligero de la imagen
+ */
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   5. SISTEMA DE CARGA
+   Indicador visual mientras se cargan las imágenes
+===================================================== */
+
+/* ----- Contenedor de Carga ----- */
+.loading {
+    text-align: center;
+    margin: 60px 0;
+    padding: 30px;
+    color: var(--primary);
+}
+
+
+/* =====================================================
+   5.1. SPINNER
+   Animación de carga circular
+===================================================== */
+
+/* ----- Spinner Circular ----- */
+/*
+ * Círculo con borde animado
+ * Color de acento en el borde superior
+ */
+.spinner {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+
+/* =====================================================
+   5.2. ANIMACIÓN
+   Rotación continua del spinner
+===================================================== */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* =====================================================
+   6. MODAL (LIGHTBOX)
+   Visualización de imágenes en pantalla completa
+===================================================== */
+
+/* =====================================================
+   6.1. OVERLAY Y CONTENEDOR
+   Capa oscura y estructura del modal
+===================================================== */
+
+/* ----- Overlay del Modal ----- */
+/*
+ * Fondo oscuro que cubre toda la pantalla
+ * Display: none por defecto, flex cuando está activo
+ */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* =====================================================
+   6.2. IMAGEN EN MODAL
+   Contenedor y configuración de la imagen principal
+===================================================== */
+
+/* ----- Contenedor de Contenido ----- */
+/*
+ * Limita el tamaño máximo de la imagen
+ * Mantiene márgenes para los controles
+ */
+.modal-content {
+    max-width: 90%;
+    max-height: 80vh;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* ----- Imagen Principal ----- */
+/*
+ * Imagen que se ajusta al contenedor
+ * Preserva aspect ratio
+ */
+.modal img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+
+/* =====================================================
+   6.3. BOTÓN DE CERRAR
+   Botón X para cerrar el modal
+===================================================== */
+
+/* ----- Botón Cerrar (X) ----- */
+/*
+ * Posicionado en la esquina superior derecha
+ * Color blanco con hover en color secundario
+ */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 3001;
+    transition: color 0.3s ease;
+}
+
+/* Estado hover */
+.close:hover {
+    color: var(--secondary);
+}
+
+
+/* =====================================================
+   6.4. BOTONES DE NAVEGACIÓN
+   Flechas para anterior/siguiente imagen
+===================================================== */
+
+/* ----- Botón Base de Navegación ----- */
+/*
+ * Botones circulares con fondo semitransparente
+ * Posicionados a los lados del modal
+ */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+/* Estado hover */
+.nav-btn:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* ----- Posiciones Específicas ----- */
+
+/* Botón Anterior (Izquierda) */
+.prev { 
+    left: 20px; 
+}
+
+/* Botón Siguiente (Derecha) */
+.next { 
+    right: 20px; 
+}
+
+
+/* =====================================================
+   6.5. CONTROLES DEL FOOTER
+   Área inferior con controles adicionales
+===================================================== */
+
+/* ----- Contenedor de Controles ----- */
+/*
+ * Centrado verticalmente con flexbox
+ * Color blanco para visibilidad sobre fondo oscuro
+ */
+.modal-footer-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    width: 100%;
+}
+
+
+/* =====================================================
+   6.6. BOTÓN DE DESCARGA
+   Botón para descargar la imagen actual
+===================================================== */
+
+/* ----- Botón de Descarga ----- */
+/*
+ * Color de acento (amarillo/naranja)
+ * Estilo destacado para acción principal
+ */
+.btn-download {
+    background-color: var(--accent);
+    color: var(--dark);
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+}
+
+/* Estado hover - escala ligeramente */
+.btn-download:hover {
+    transform: scale(1.05);
+    background-color: white;
+}
+
+
+/* =====================================================
+   6.7. INFORMACIÓN DE IMAGEN
+   Metadata de la imagen actual
+===================================================== */
+
+/* ----- Texto de Información ----- */
+/*
+ * Muestra el número de imagen actual
+ * Opacidad reducida para no distraer
+ */
+.modal-info {
+    color: white;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+
+/* =====================================================
+   7. MENSAJES DE ERROR
+   Notificación cuando falla la carga de imágenes
+===================================================== */
+
+/* ----- Contenedor de Error ----- */
+/*
+ * Oculto por defecto
+ * Fondo rojo semitransparente con borde
+ */
+#error-container {
+    display: none;
+    text-align: center;
+    color: var(--secondary);
+    margin: 40px auto;
+    padding: 25px;
+    background: rgba(230, 57, 70, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(230, 57, 70, 0.3);
+    max-width: 600px;
+}
+
+/* ----- Botón de Reintento ----- */
+/*
+ * Botón centrado para recargar imágenes
+ */
+#refresh-btn {
+    margin: 30px auto;
+    display: block;
+}
+
+
+/* =====================================================
+   8. RESPONSIVE DESIGN
+   Adaptaciones para diferentes tamaños de pantalla
+===================================================== */
+
+/* =====================================================
+   8.1. TABLETS Y MÓVILES (≤768px)
+===================================================== */
+@media (max-width: 768px) {
+    
+    /* --- Header de Galería --- */
+    /* Reducir espaciado */
+    .gallery-header {
+        margin-bottom: 30px;
+    }
+    
+    /* --- Controles de Navegación --- */
+    /* Ajustar espaciado y disposición */
+    .nav-controls {
+        margin: 30px 0 15px;
+        gap: 10px;
+    }
+    
+    /* Botones apilados verticalmente */
+    .nav-controls .btn-nav {
+        margin: 5px 0;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* --- Grid de Galería --- */
+    /* Columnas más pequeñas (mínimo 150px) */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    
+    /* --- Modal - Botones de Navegación --- */
+    /* Reducir tamaño de botones */
+    .modal .nav-btn {
+        padding: 10px;
+        font-size: 20px;
+    }
+    
+    /* Ajustar posición */
+    .prev { 
+        left: 10px; 
+    }
+    
+    .next { 
+        right: 10px; 
+    }
+    
+    /* --- Botón de Cerrar --- */
+    /* Ajustar posición y tamaño */
+    .close {
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+    }
+}
+
+
+/* =====================================================
+   8.2. MÓVILES PEQUEÑOS (≤576px)
+===================================================== */
+@media (max-width: 576px) {
+    
+    /* --- Títulos del Header --- */
+    /* Reducir tamaños de fuente */
+    .gallery-header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .gallery-header h2 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    /* --- Botones de Navegación --- */
+    /* Botones de ancho completo */
+    .btn-nav {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        margin: 8px 0;
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+    
+    /* --- Grid de Galería --- */
+    /* Reducir espacio entre imágenes */
+    .gallery-grid {
+        gap: 15px;
+    }
+    
+    /* --- Botón de Descarga en Modal --- */
+    /* Ajustar tamaño */
+    .btn-download {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* =====================================================
+   NOTAS DE IMPLEMENTACIÓN
+===================================================== */
+
+/*
+ * ===== CARACTERÍSTICAS PRINCIPALES =====
+ * 
+ * 1. GRID RESPONSIVO AUTOMÁTICO
+ *    - Se adapta al espacio disponible
+ *    - Mínimo 250px por imagen en desktop
+ *    - Mínimo 150px en tablets
+ *    - Aspect ratio 1:1 mantenido
+ * 
+ * 2. LIGHTBOX COMPLETO
+ *    - Visualización en pantalla completa
+ *    - Navegación con flechas
+ *    - Descarga individual de imágenes
+ *    - Cierre con botón X o clic fuera
+ * 
+ * 3. CARGA DINÁMICA
+ *    - Spinner mientras carga
+ *    - Manejo de errores
+ *    - Contador de imágenes
+ * 
+ * ===== ESTRUCTURA HTML ESPERADA =====
+ * 
+ * <div class="gallery-header">
+ *   <h1>Nombre del Evento</h1>
+ *   <h2>Fecha</h2>
+ *   <p id="image-count">X fotos</p>
+ * </div>
+ * 
+ * <div class="nav-controls">
+ *   <a href="..." class="btn-nav">Regresar</a>
+ *   <button class="btn-nav secondary">Descargar Todas</button>
+ * </div>
+ * 
+ * <div class="gallery-grid" id="gallery">
+ *   <!-- Contenedores de imagen generados dinámicamente -->
+ * </div>
+ * 
+ * <div class="modal" id="modal">
+ *   <span class="close">&times;</span>
+ *   <button class="nav-btn prev">&#10094;</button>
+ *   <div class="modal-content">
+ *     <img id="modal-img" src="" alt="">
+ *   </div>
+ *   <button class="nav-btn next">&#10095;</button>
+ *   <div class="modal-footer-controls">
+ *     <a href="#" class="btn-download" id="download-btn">
+ *       <i class="fas fa-download"></i> Descargar
+ *     </a>
+ *     <p class="modal-info" id="modal-info">Imagen X de Y</p>
+ *   </div>
+ * </div>
+ * 
+ * ===== VARIABLES REQUERIDAS (de styles.css) =====
+ * 
+ * --primary: Color principal (títulos)
+ * --dark: Color oscuro (hover, subtítulos)
+ * --secondary: Color secundario (botón especial)
+ * --accent: Color de acento (spinner, descarga)
+ * 
+ * ===== FUNCIONALIDAD JAVASCRIPT REQUERIDA =====
+ * 
+ * 1. Carga de imágenes desde API/carpeta
+ * 2. Generación dinámica del grid
+ * 3. Apertura/cierre del modal
+ * 4. Navegación entre imágenes
+ * 5. Descarga individual
+ * 6. Contador de imágenes
+ * 
+ * ===== MEJORAS FUTURAS POSIBLES =====
+ * 
+ * 1. Lazy loading de imágenes
+ * 2. Filtros o categorías
+ * 3. Compartir en redes sociales
+ * 4. Slideshow automático
+ * 5. Gestos táctiles para navegación
+ * 6. Thumbnails en el modal
+ * 
+ * ===== ACCESIBILIDAD =====
+ * 
+ * - Alt text en todas las imágenes
+ * - Navegación con teclado (flechas, ESC)
+ * - Contraste adecuado en controles
+ * - Botones con áreas clicables grandes
+ * - Indicadores visuales claros
+ * 
+ * ===== RENDIMIENTO =====
+ * 
+ * - Object-fit: cover (optimización GPU)
+ * - Transiciones CSS (hardware accelerated)
+ * - Lazy loading recomendado para >50 imágenes
+ * - Compresión de imágenes en servidor
+ * - Aspect ratio 1:1 evita reflows
+ */
+
+
+/* =====================================================
+   FIN DE GALERIA-DETALLE.CSS
+===================================================== */

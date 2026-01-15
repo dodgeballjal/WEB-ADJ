@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- CONFIGURACIÓN BÁSICA DEL DOCUMENTO -->
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asociación de Dodgeball Jalisco</title>
+    
+    <!-- ⭐ FAVICON - NUEVO -->
+    <link rel="icon" type="image/svg+xml" href="imagen/logo-adj.svg">
+    <link rel="icon" type="image/png" href="imagen/logo-adj.png">
+    <link rel="apple-touch-icon" href="imagen/logo-adj.png">
+    
+    <!-- ENLACE A LA LIBRERÍA DE ICONOS FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ⭐ ICONIFY - PARA ICONOS PERSONALIZADOS -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    
+    <!-- ARCHIVOS CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/fix-spacing.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="imagen/logo-adj.svg" alt="Logo Asociación de Dodgeball Jalisco">
+                <span>Dodgeball Jalisco</span>
+            </div>
+        
+            <button class="menu-toggle" 
+                aria-label="botón menu-toggle" 
+                id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-inicio">
+                            Inicio <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-inicio">
+                            <a href="principal.html" class="submenu-link">
+                                <i class="fas fa-home"></i> Página Principal
+                            </a>
+                            <a href="principal.html#nosotros" class="submenu-link">
+                                <i class="fa-solid fa-people-group"></i> Nosotros
+                            </a>
+                            <a href="mvv.html" class="submenu-link">
+                                <i class="fa-solid fa-medal"></i> Nuestros Valores
+                            </a>
+                            <a href="organigrama.html" class="submenu-link">
+                                <i class="fa-solid fa-sitemap"></i> Directiva
+                            </a>
+                            <a href="documentos.html" class="submenu-link">
+                                <i class="fa-solid fa-box-archive"></i> Documentos
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-dodgeball">
+                            Dodgeball <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-dodgeball">
+                            <a href="principal.html#juego" class="submenu-link">
+                                <i class="fa-solid fa-question-circle"></i> ¿Qué es Dodgeball?
+                            </a>
+                            <a href="presentacion.html" class="submenu-link">
+                                <i class="fa-solid fa-binoculars"></i> ¿Cómo se juega?
+                            </a>
+                            <a href="reglamentos.html" class="submenu-link">
+                                <i class="fa-solid fa-book"></i> Reglamento deportivo
+                            </a>
+                            <a href="principal.html#equipos" class="submenu-link">
+                                <i class="fa-solid fa-ranking-star"></i> Clubes y Escuelas
+                            </a>
+                            <a href="principal.html#sedes" class="submenu-link">
+                                <i class="fa-solid fa-location-dot"></i> SEDES
+                            </a>
+                            <a href="seleccion_jal.html" class="submenu-link">
+                                <i class="fa-solid fa-star"></i> Selección Jalisco
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-eventos">
+                            Eventos <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-eventos">
+                            <a href="calendario.html" class="submenu-link">
+                                <i class="fa-solid fa-calendar"></i> Calendario 2026
+                            </a>
+                            <a href="torneos_estatales.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Torneos Estatales
+                            </a>
+                            <a href="torneos_nacionales.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Torneos Nacionales
+                            </a>
+                            <a href="liga_metropolitana.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Liga Metropolitana
+                            </a>
+                            <a href="galeria.html" class="submenu-link">
+                                <i class="fa-solid fa-camera"></i> Galería de Eventos
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-solicitudes">
+                            Solicitudes <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-solicitudes">
+                            <a href="#" onclick="openModal('afiliaciones')" class="submenu-link">
+                                <i class="fa-solid fa-id-card-clip"></i> Afiliaciones
+                            </a>
+                            <a href="#" onclick="openModal('cursos')" class="submenu-link">
+                                <i class="fa-solid fa-file-signature"></i> Curso Arbitraje
+                            </a>
+                            <a href="#" onclick="openModal('cursos')" class="submenu-link">
+                                <i class="fa-solid fa-file-signature"></i> Curso Couches
+                            </a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSXrnxf24GRGZqCx2eUlO-GYx1TS6rEgfn06uFFYJup8iu6Q/viewform?usp=sharing&ouid=102655453861620427538" class="submenu-link">
+                                <i class="fa-solid fa-file-pen"></i> Exhibición Gratuita
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-contacto">
+                            Contacto <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-contacto">
+                            <a href="tel:523332363937" class="submenu-link">
+                                <i class="fas fa-phone-alt"></i> Teléfono 332363937
+                            </a>
+                            <a href="mailto:asociacion@dodgeballjalisco.com" class="submenu-link">
+                                <i class="fa-solid fa-envelope"></i> Correo: asociacion@dodgeballjalisco.com
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- ===== SECCIÓN HERO (PORTADA PRINCIPAL) ===== -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <h1>Asociación de Dodgeball Jalisco A.C.</h1>
+            <h2>Forjando mejores personas</h2>
+            <h2>y atletas de clase mundial.</h2>
+            <a href="#juego" class="btn">¿Qué es el dodgeball? </a>
+            <!-- Texto indicando redes sociales -->
+            <p class="hero-social-text">Visita nuestras redes sociales</p>
+            <!-- REDES SOCIALES EN HERO -->
+            <div class="hero-social-links">
+                <a href="https://www.facebook.com/dodgeballjalisco" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://discord.gg/TYRngUYugp" target="_blank" aria-label="Discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://www.instagram.com/dodgeballjalisco" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@dodgeballjal" target="_blank" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== SECCIÓN DE CONVOCATORIAS Y COMUNICADOS ===== -->
+    <section id="convocatorias" class="announcements">
+        <div class="container">
+            <h2 class="section-title">Convocatorias y Comunicados</h2>
+            <div class="announcements-content">
+                <h3>¡Mantente informado de las últimas novedades!</h3>
+                <p>En esta sección encontrarás todas las convocatorias oficiales, comunicados institucionales, avisos importantes y actualizaciones sobre programas, eventos y actividades de la Asociación de Dodgeball Jalisco.</p>
+                <p>Te invitamos a revisar regularmente esta sección para no perderte ninguna oportunidad de participación, capacitación o competencia.</p>
+                <a href="#contacto" class="btn">Contáctanos para más información</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN DE DODGEBALL ===== -->
+    <section id="juego" class="gameplay">
+        <div class="container">
+            <h2 class="section-title">¿Qué es el DODGEBALL?</h2>
+            <div class="gameplay-content">
+                <div class="gameplay-text">
+                    <h3>EL DODGEBALL ES UN DEPORTE PARECIDO AL TRADICIONAL QUEMADOS</h3>
+                </div>
+                <div class="juego-grid">
+                    <div class="juego-card">
+                        <div class="juego-logo">
+                            <img src="imagen/numero1.svg" alt="1">
+                        </div>
+                        <h3>OBJETIVO</h3>
+                        <p>El objetivo es eliminar a los jugadores del equipo contrario lanzando pelotas de esponjas.</p>
+                    </div>
+                    <div class="juego-card">
+                        <div class="juego-logo">
+                            <img src="imagen/numero2.svg" alt="2">
+                        </div>
+                        <h3>TE QUEMAS</h3>
+                        <p>Si algún jugador es rozado o golpeado por la pelota lanzada por el adversario quedará eliminado.</p>
+                    </div>
+                    <div class="juego-card">
+                        <div class="juego-logo">
+                            <img src="imagen/numero3.svg" alt="3">
+                        </div>
+                        <h3>PUNTOS</h3>
+                        <p>Eliminar a todos los jugadores contrarios otorga un punto en el marcador, ganará el equipo que más puntos consiga al finalizar el partido.</p>
+                    </div>
+                </div>
+                <div class="gameplay-image" id="video-representativo">
+                    <h2 class="section-title"></h2>
+                    <h3>DODGEBALL</h3>
+                    <div class="video-responsive">
+                        <iframe 
+                            src="https://www.youtube.com/embed/lDWDG0L0BtM?autoplay=1&mute=1" 
+                            title="¿Qué es el Dodgeball?" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="btn-group">
+                        <a href="presentacion.html" target="_self" class="btn btn-green">¡Aprende a jugarlo!</a>
+                        <a href="reglamentos.html" target="_self" class="btn btn-green">Reglamentos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN SOBRE NOSOTROS ===== -->
+    <section id="nosotros" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Impulsando el Dodgeball en Jalisco</h3>
+                    <p>La Asociación de Dodgeball Jalisco es el organismo rector del deporte del dodgeball en el estado de Jalisco, México. Nuestra misión es promover, desarrollar y regular el dodgeball en todas sus formas.</p>
+                    <p>Organizamos ligas, torneos y eventos para jugadores de todos los niveles, desde principiantes hasta atletas de élite. Trabajamos para fomentar la inclusión, el espíritu deportivo y la excelencia atlética.</p>
+                    <p>Formamos parte de la Federación Mexicana de Dodgeball y mantenemos relaciones con organizaciones internacionales para llevar a nuestros atletas a competencias mundiales.</p>
+                    <a href="mvv.html" class="btn">MISIÓN, VISIÓN y VALORES</a>
+                </div>
+                <div class="about-image">
+                    <img src="imagen/about-nosotros.jpg" alt="Juveniles de dodgeball">
+                </div>
+            </div>
+
+            <!-- Sección "Sobre Nosotros" -->
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Conoce tu asociación ADJ</h2> 
+                    <p>Conoce a los encargados y directivos de la Asociación de Dodgeball Jalisco.</p>
+                    <!-- ⭐ ICONO ACTUALIZADO: fa-user-tie -->
+                    <a href="organigrama.html" class="btn btn-blue-primary">
+                        <i class="fas fa-sitemap"></i> DIRECTIVA ADJ 
+                    </a>
+                </div>
+
+                <div class="about-text">
+                    <h2>Únete a Nuestra Comunidad</h2>
+                    <p>¡Afíliate! tu club o escuela pueden ser reconocidas ante la ADJ y la FMDB</p>
+                    <button type="button" 
+                        onclick="openModal('afiliaciones')" 
+                        class="btn btn-blue-primary">
+                        <i class="fas fa-users"></i> AFILIACIONES
+                    </button>
+                </div>
+                
+                <div class="about-text">
+                    <h2>Capacitate y certificate</h2>
+                    <p>Toma los cursos y certificate como arbitro o coach de dodgeball avalado por la ADJ y FMDB</p>
+                    <button 
+                        type="button" 
+                        onclick="openModal('cursos')" 
+                        class="btn btn-blue-primary"
+                        aria-label="Información sobre cursos y certificación">
+                        <i class="fas fa-award"></i> CURSOS / CERTIFICACIÓN
+                    </button>
+                </div>
+                
+                <div class="about-text">
+                    <h2>¿Te interesa el dodgeball?</h2>
+                    <p>¿tienes una escuela o colegio? y estas interesado en conocer más del deporte, solicita una exhibición sin costo</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSXrnxf24GRGZqCx2eUlO-GYx1TS6rEgfn06uFFYJup8iu6Q/viewform?usp=sharing&ouid=102655453861620427538" 
+                    class="btn btn-blue-primary" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                        <iconify-icon icon="mdi:stadium-variant"></iconify-icon> EXHIBICIONES
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN DE EVENTOS ===== -->
+    <section id="eventos" class="events">
+        <div class="container">
+            <h2 class="section-title">Próximos Eventos</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="imagen/liga-LMDB.jpg" alt="Liga Metropolitana de Dodgeball Jalisco">
+                    </div>
+                    <div class="event-content">
+                        <span class="event-date">21 Febrero - 25 Abril 2026</span>
+                        <h3>LIGA metropolitana de Dodgeball Jalisco</h3>
+                        <p>Competencia abierta para equipos de toda la zona metropolitana de Guadalajara, hasta tres equipos de cada categoría por club o institución.</p>
+                        <a href="liga_metropolitana.html" class="btn">Más Información</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="imagen/CAMPEONATOS-NACIONALES.jpg" alt="CAMPEONATOS NACIONALES 2026">
+                    </div>
+                    <div class="event-content">
+                        <span class="event-date">Mayo - Junio 2026</span>
+                        <h3>CAMPEONATOS NACIONALES 2026</h3>
+                        <p>Campeonatos nacionales en los que participan las selecciones Jalisco en todas sus ramas.</p>
+                        <a href="torneos_nacionales.html" class="btn"> Más Información</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="imagen/ESTATALES.jpg" alt="TORNEOS ESTATALES 2026">
+                    </div>
+                    <div class="event-content">
+                        <span class="event-date">SEP - OCT - NOV 2026</span>
+                        <h3>TORNEOS ESTATALES</h3>
+                        <p>Torneos clasificatorios para seleccionar a los representativos de Jalisco rumbo a los nacionales 2027.</p>
+                        <a href="torneos_estatales.html" class="btn">Más Información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== SECCIÓN DE EQUIPOS ===== -->
+    <section id="equipos" class="teams">
+        <div class="container">
+            <h2 class="section-title">Nuestros Clubes y escuelas</h2>
+            <div class="teams-grid">
+                <div class="team-card">
+                    <div class="team-logo">
+                        <img src="imagen/leones-logo.svg" alt="Logo CLUB DEPORTIVO DE DODGEBALL LEONES DE HIERRO">
+                    </div>
+                    <h3>Club Deportivo Leones de Hierro</h3>
+                    <p>Redes sociales.</p>
+                    <div class="team-social">
+                        <a href="https://www.instagram.com/dodgeball.leones.gdl/" target="_blank" aria-label="Instagram Leones">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/dodgeball.leones.gdl/" target="_blank" aria-label="Facebook Leones">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-logo">
+                        <img src="imagen/panteras-logo.svg" alt="Logo panteras dodgeball club">
+                    </div>
+                    <h3>Panteras Dodgeball Club</h3>
+                    <p>Redes sociales.</p>
+                    <div class="team-social">
+                        <a href="https://www.instagram.com/panteras.jalisco/" target="_blank" aria-label="Instagram Panteras">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-logo">
+                        <img src="imagen/aktivos-logo.svg" alt="Logo aktivos escuela deportiva">
+                    </div>
+                    <h3>"Aktivos" Escuela Deportiva</h3>
+                    <p>Redes sociales.</p>
+                    <div class="team-social">
+                        <a href="https://www.instagram.com/dodgeballaktivosgdl/" target="_blank" aria-label="Instagram Aktivos">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/Aktivosgdl/" target="_blank" aria-label="Facebook Aktivos">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-logo">
+                        <img src="imagen/axolotl-logo.svg" alt="Logo axolotl dodgeball club">
+                    </div>
+                    <h3>Axolotl Dodgeball Club</h3>
+                    <p>Redes sociales.</p>
+                    <div class="team-social">
+                        <a href="https://www.instagram.com/axolotl_dodgeballclub/" target="_blank" aria-label="Instagram Axolotl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== SECCIÓN DE SEDES ===== -->
+    <section id="sedes" class="locations">
+        <div class="container">
+            <h2 class="section-title">Nuestras Sedes</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1XVOVPPL8vaQQiO5IJztaPwzQh335g60&ehbc=2E312F" width="640" height="480"></iframe>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== FOOTER ===== -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Redes sociales ADJ</h3>
+                    <p>visita nuestras redes sociales</p>
+                    <p>siguelas y dales like.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/dodgeballjalisco" target="_blank" aria-label="facebook ADJ"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://discord.gg/TYRngUYugp" target="_blank" aria-label="Discord ADJ"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.instagram.com/dodgeballjalisco" target="_blank" aria-label="Instagram ADJ"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@dodgeballjal" target="_blank" aria-label="YouTube ADJ"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#juego">Dodgeball</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#eventos">Eventos</a></li>
+                        <li><a href="#equipos">Clubes y escuelas</a></li>
+                        <li><a href="#sedes">Sedes</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Proximamente</h3>
+                    <ul>
+                        <li><a href="#" onclick="openModal('afiliaciones'); return false;">Afiliaciones</a></li>
+                        <li><a href="#" onclick="openModal('cursos'); return false;">Cursos y Capacitaciones</a></li>
+                        <li><a href="#" onclick="openModal('cursos'); return false;">Programa de Árbitros</a></li>
+                        <li><a href="torneos_estatales.html">Torneos Estatales</a></li>
+                        <li><a href="liga_metropolitana.html">Liga metropolitana</a></li>
+                        <li><a href="liga_intercolegial.html">Liga intercolegial</a></li>
+                        <li><a href="seleccion_jal.html">Seleccion Jalisco</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp contact-icon"></i>
+                            <p><a href="https://wa.me/523332363937?text=Hola%2C%20me%20gustaría%20más%20información%20sobre%20el%20Dodgeball." target="_blank" style="color: white; text-decoration: none;">33 3236 3937</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <p><a href="tel:523332363937" style="color: white; text-decoration: none;">33 3236 3937</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <p><a href="mailto:asociacion@dodgeballjalisco.com" style="color: white; text-decoration: none;">asociacion@dodgeballjalisco.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Asociación de Dodgeball Jalisco. Todos los derechos reservados.</p>
+                <p><a href="aviso-privacidad.html" style="color:#aaa; text-decoration: none;">Aviso de Privacidad</a></p>
+            </div>
+        </div>
+    </footer>
+    
+     <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/principal.js"></script>
+
+    <!-- ===== MODAL EN CONSTRUCCIÓN ===== -->
+    <div id="modalOverlay" class="modal-overlay" onclick="closeModalIfOutside(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <button 
+                    type="button"
+                    class="modal-close" 
+                    onclick="closeModal()"
+                    aria-label="Cerrar modal">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h2 id="modalTitle">Sección en Construcción</h2>
+                <p id="modalSubtitle">Próximamente disponible</p>
+            </div>
+
+            <div class="modal-body">
+                <div id="modalContent"></div>
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>¡Gracias por tu interés!</h3>
+                    <p>Te notificaremos cuando esta sección esté disponible.</p>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+                        Revisa tu email para confirmar el registro.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

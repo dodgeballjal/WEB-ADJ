@@ -1,0 +1,406 @@
+/* =====================================================
+   FIX-SPACING.CSS - CORRECCIÓN DE ESPACIADO HEADER
+   Asociación de Dodgeball Jalisco
+   
+   PROPÓSITO:
+   Este archivo corrige el espaciado excesivo superior causado
+   por el header sticky. Debe incluirse DESPUÉS de todos los
+   demás archivos CSS para sobrescribir valores problemáticos.
+   
+   TABLA DE CONTENIDOS:
+   1. Correcciones Globales
+   2. Correcciones Específicas por Página
+      2.1. Organigrama
+      2.2. MVV (Misión, Visión, Valores)
+      2.3. Principal (Hero)
+      2.4. Galería
+      2.5. Presentación y Reglamentos
+      2.6. Aviso de Privacidad
+   3. Ajustes Adicionales
+   4. Responsive Design
+   5. Notas de Implementación
+===================================================== */
+
+
+/* =====================================================
+   1. CORRECCIONES GLOBALES
+   Valores generales aplicados a la mayoría de páginas
+===================================================== */
+
+/* ----- Reducción de Padding Superior ----- */
+/* 
+ * ANTES: 140px (desktop) / 120px (mobile)
+ * DESPUÉS: 50px (desktop) / 30px (mobile)
+ * REDUCCIÓN: ≈65% menos en desktop, ≈75% en mobile
+ */
+
+.main-content,
+main,
+section:first-of-type {
+    padding-top: 50px !important;
+}
+
+
+/* =====================================================
+   2. CORRECCIONES ESPECÍFICAS POR PÁGINA
+   Ajustes individuales para cada tipo de página
+===================================================== */
+
+/* =====================================================
+   2.1. ORGANIGRAMA
+   Página de estructura organizacional
+===================================================== */
+
+/* ----- Sección Principal ----- */
+/* ANTES: padding: 140px 0 60px */
+/* DESPUÉS: padding: 50px 0 60px */
+.organigrama-section {
+    padding: 50px 0 60px !important;
+}
+
+
+/* =====================================================
+   2.2. MVV (MISIÓN, VISIÓN, VALORES)
+   Páginas de valores institucionales
+===================================================== */
+
+/* ----- Hero Section ----- */
+/* ANTES: padding: 120px 0 80px */
+/* DESPUÉS: padding: 50px 0 80px */
+.mvv-hero {
+    padding: 50px 0 80px !important;
+}
+
+/* ----- Sección del Logo ----- */
+/* ANTES: padding: 80px 0 (implícito desde section) */
+/* DESPUÉS: padding: 50px 0 */
+.logo-section {
+    padding: 50px 0 !important;
+}
+
+/* ----- Sección de Tabs ----- */
+/* ANTES: padding: 80px 0 */
+/* DESPUÉS: padding: 50px 0 */
+.mvv-tabs-section {
+    padding: 50px 0 !important;
+}
+
+
+/* =====================================================
+   2.3. PRINCIPAL (HERO)
+   Página de inicio con portada principal
+===================================================== */
+
+/* ----- Hero Section ----- */
+/* 
+ * Ajustes especiales para el hero de la página principal
+ * que tiene altura de viewport completo
+ */
+
+/* Eliminar margen superior */
+.hero {
+    margin-top: 0 !important;
+}
+
+/* Ajustar padding superior */
+/* ANTES: 140px aproximadamente */
+/* DESPUÉS: 90px para acomodar el header */
+.hero {
+    padding-top: 90px !important;
+}
+
+
+/* =====================================================
+   2.4. GALERÍA
+   Páginas de galería de eventos
+===================================================== */
+
+/* ----- Título de Página ----- */
+/* Reducir margen superior del título */
+.page-title {
+    margin-top: 20px !important;
+}
+
+
+/* =====================================================
+   2.5. PRESENTACIÓN Y REGLAMENTOS
+   Páginas con iframes embebidos
+===================================================== */
+
+/* ----- Contenedores de Presentación ----- */
+/* Reducir margen superior para acercar al header */
+.presentation-container,
+.reglamento-container {
+    margin-top: 30px !important;
+}
+
+
+/* =====================================================
+   2.6. AVISO DE PRIVACIDAD
+   Página de política de privacidad
+===================================================== */
+
+/* ----- Contenedor Principal ----- */
+/* ANTES: padding: 120px 0 60px */
+/* DESPUÉS: padding: 50px 0 60px */
+.privacy-main {
+    padding: 50px 0 60px !important;
+}
+
+/* ----- Hero de Privacidad ----- */
+/* Reducir margen inferior para acercar contenido */
+.privacy-hero {
+    margin-bottom: 30px !important;
+}
+
+
+/* =====================================================
+   3. AJUSTES ADICIONALES
+   Correcciones complementarias de espaciado
+===================================================== */
+
+/* ----- Header Sticky ----- */
+/* Asegurar que el header no tape contenido */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* ----- Títulos de Sección ----- */
+/* Normalizar márgenes de títulos */
+.section-title {
+    margin-top: 0 !important;
+    margin-bottom: 30px !important;
+}
+
+/* ----- Títulos de Página ----- */
+.page-title {
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+}
+
+/* ----- Encabezado de Galería ----- */
+.gallery-header {
+    margin-top: 0 !important;
+    margin-bottom: 30px !important;
+}
+
+/* ----- Encabezados de Sección ----- */
+/* Para organigrama y MVV */
+.section-header {
+    margin-top: 0 !important;
+    margin-bottom: 30px !important;
+}
+
+/* ----- Encabezado de Tabs ----- */
+.tabs-header {
+    margin-top: 0 !important;
+    margin-bottom: 40px !important;
+}
+
+/* ----- Contenido del Hero ----- */
+/* Eliminar padding superior adicional */
+.hero-content {
+    padding-top: 0 !important;
+}
+
+/* ----- Contenedores Principales ----- */
+/* Normalizar margen superior */
+.container {
+    margin-top: 0 !important;
+}
+
+
+/* =====================================================
+   4. RESPONSIVE DESIGN
+   Adaptaciones para diferentes tamaños de pantalla
+===================================================== */
+
+/* =====================================================
+   4.1. TABLETS (≤768px)
+   Reducción adicional para pantallas medianas
+===================================================== */
+@media (max-width: 768px) {
+    
+    /* --- Reducción General --- */
+    /* De 50px a 30px (40% menos) */
+    .main-content,
+    main,
+    section:first-of-type {
+        padding-top: 30px !important;
+    }
+
+    /* --- Organigrama --- */
+    .organigrama-section {
+        padding: 30px 0 40px !important;
+    }
+
+    /* --- MVV --- */
+    .mvv-hero {
+        padding: 30px 0 60px !important;
+    }
+
+    .logo-section,
+    .mvv-tabs-section {
+        padding: 30px 0 !important;
+    }
+
+    /* --- Hero Principal --- */
+    /* Ajuste especial para hero con viewport height */
+    .hero {
+        padding-top: 70px !important;
+        min-height: 100vh;
+    }
+
+    /* --- Aviso de Privacidad --- */
+    .privacy-main {
+        padding: 30px 0 40px !important;
+    }
+
+    .privacy-hero {
+        padding: 40px 20px !important;
+    }
+
+    /* --- Presentación y Reglamentos --- */
+    .presentation-container,
+    .reglamento-container {
+        margin-top: 20px !important;
+    }
+}
+
+
+/* =====================================================
+   4.2. MÓVILES PEQUEÑOS (≤576px)
+   Reducción máxima para pantallas pequeñas
+===================================================== */
+@media (max-width: 576px) {
+    
+    /* --- Reducción General --- */
+    /* De 30px a 25px */
+    .main-content,
+    main,
+    section:first-of-type {
+        padding-top: 25px !important;
+    }
+
+    /* --- Organigrama --- */
+    .organigrama-section {
+        padding: 25px 0 40px !important;
+    }
+
+    /* --- MVV --- */
+    .mvv-hero {
+        padding: 25px 0 60px !important;
+    }
+
+    /* --- Hero Principal --- */
+    .hero {
+        padding-top: 60px !important;
+    }
+
+    /* --- Aviso de Privacidad --- */
+    .privacy-main {
+        padding: 25px 0 40px !important;
+    }
+
+    /* --- Presentación y Reglamentos --- */
+    .presentation-container,
+    .reglamento-container {
+        margin-top: 15px !important;
+    }
+}
+
+
+/* =====================================================
+   5. NOTAS DE IMPLEMENTACIÓN
+   Documentación de cambios y valores
+===================================================== */
+
+/*
+ * ===== RESUMEN DE CAMBIOS =====
+ * 
+ * VALORES ORIGINALES (ANTES):
+ * - Desktop: 120-140px de padding superior
+ * - Tablet:  100-120px de padding superior
+ * - Mobile:  100-120px de padding superior
+ * 
+ * VALORES NUEVOS (DESPUÉS):
+ * - Desktop: 50px de padding superior
+ * - Tablet:  30px de padding superior
+ * - Mobile:  25px de padding superior
+ * 
+ * REDUCCIÓN PORCENTUAL:
+ * - Desktop: ~65% de reducción (de 140px a 50px)
+ * - Tablet:  ~75% de reducción (de 120px a 30px)
+ * - Mobile:  ~75% de reducción (de 100px a 25px)
+ * 
+ * ===== BENEFICIOS =====
+ * 
+ * 1. MEJOR APROVECHAMIENTO DEL ESPACIO
+ *    - Más contenido visible sin scroll
+ *    - Experiencia más compacta y profesional
+ * 
+ * 2. CONSISTENCIA VISUAL
+ *    - Espaciado uniforme en todas las páginas
+ *    - Transiciones suaves entre secciones
+ * 
+ * 3. EXPERIENCIA MÓVIL MEJORADA
+ *    - Reducción adicional en pantallas pequeñas
+ *    - Mejor uso del espacio limitado
+ * 
+ * ===== INSTRUCCIONES DE USO =====
+ * 
+ * 1. INCLUIR EN CADA HTML
+ *    Agregar DESPUÉS de todos los demás CSS:
+ *    <link rel="stylesheet" href="css/fix-spacing.css">
+ * 
+ * 2. ORDEN DE CARGA (CRÍTICO)
+ *    styles.css          (Base)
+ *    [nombre]-pagina.css (Específicos)
+ *    fix-spacing.css     (Correcciones - ÚLTIMO)
+ * 
+ * 3. USO DE !IMPORTANT
+ *    Necesario para sobrescribir valores previos
+ *    No remover sin probar en todas las páginas
+ * 
+ * ===== PÁGINAS AFECTADAS =====
+ * 
+ * ✓ principal.html      - Hero ajustado
+ * ✓ mvv.html            - Hero, Logo, Tabs ajustados
+ * ✓ organigrama.html    - Sección principal ajustada
+ * ✓ galeria.html        - Título ajustado
+ * ✓ galeria-detalle.html - Header ajustado
+ * ✓ presentacion.html   - Contenedor ajustado
+ * ✓ reglamentos.html    - Contenedor ajustado
+ * ✓ aviso-privacidad.html - Main y Hero ajustados
+ * 
+ * ===== SOLUCIÓN DE PROBLEMAS =====
+ * 
+ * PROBLEMA: Contenido tapado por header
+ * SOLUCIÓN: Verificar que header tenga position: sticky
+ * 
+ * PROBLEMA: Espaciado diferente entre páginas
+ * SOLUCIÓN: Asegurar que fix-spacing.css cargue último
+ * 
+ * PROBLEMA: Animaciones rotas
+ * SOLUCIÓN: Las animaciones no se ven afectadas por
+ *           estos cambios de padding
+ * 
+ * ===== MANTENIMIENTO =====
+ * 
+ * Al agregar nuevas páginas:
+ * 1. Incluir fix-spacing.css
+ * 2. Probar en desktop, tablet y móvil
+ * 3. Ajustar valores específicos si es necesario
+ * 
+ * Al modificar el header:
+ * 1. Actualizar altura del header si cambia
+ * 2. Ajustar padding-top del .hero si es necesario
+ * 3. Probar navegación sticky en todas las páginas
+ */
+
+
+/* =====================================================
+   FIN DE FIX-SPACING.CSS
+===================================================== */

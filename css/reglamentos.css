@@ -1,0 +1,502 @@
+/* =====================================================
+   REGLAMENTOS.CSS - PÁGINA DE REGLAMENTOS DEL JUEGO
+   Asociación de Dodgeball Jalisco
+   
+   PROPÓSITO:
+   Estilos para la página que muestra el documento oficial
+   de reglamentos del juego de dodgeball embebido mediante
+   iframe. Incluye título, subtítulo y controles de navegación.
+   
+   TABLA DE CONTENIDOS:
+   1. Contenido Principal
+   2. Contenedor de Reglamento
+      2.1. Estructura Base
+      2.2. Títulos y Headers
+   3. Iframe de Reglamento
+      3.1. Contenedor del Iframe
+      3.2. Iframe Principal
+      3.3. Dimensiones y Estilos
+   4. Contenedor de Botón
+   5. Responsive Design
+===================================================== */
+
+
+/* =====================================================
+   1. CONTENIDO PRINCIPAL
+   Ajuste del layout principal
+===================================================== */
+
+/* ----- Main Content ----- */
+/*
+ * Ajuste del padding superior para evitar
+ * que el header sticky tape el contenido
+ * (Este valor se ajusta adicionalmente con fix-spacing.css)
+ */
+.main-content {
+    padding-top: 120px;
+    padding-bottom: 40px;
+}
+
+
+/* =====================================================
+   2. CONTENEDOR DE REGLAMENTO
+   Estructura principal de la página
+===================================================== */
+
+/* =====================================================
+   2.1. ESTRUCTURA BASE
+   Contenedor centrado con máximos
+===================================================== */
+
+/* ----- Contenedor Principal ----- */
+/*
+ * Contenedor que envuelve todo el contenido
+ * Características:
+ * - Ancho completo con máximo de 1200px
+ * - Centrado horizontalmente con auto margins
+ * - Padding lateral de 20px
+ * - Alineación de texto al centro
+ */
+.reglamento-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+
+/* =====================================================
+   2.2. TÍTULOS Y HEADERS
+   Tipografía de encabezados
+===================================================== */
+
+/* ----- Título Principal (h1) ----- */
+/*
+ * Título destacado de la página
+ * Ej: "REGLAMENTO OFICIAL"
+ */
+.reglamento-container h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* ----- Subtítulo (h3) ----- */
+/*
+ * Subtítulo complementario
+ * Ej: "Reglas del Juego de Dodgeball"
+ */
+.reglamento-container h3 {
+    font-size: 1.5rem;
+    color: var(--dark);
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   3. IFRAME DE REGLAMENTO
+   Documento embebido del reglamento
+===================================================== */
+
+/* =====================================================
+   3.1. CONTENEDOR DEL IFRAME
+   Wrapper con estilos visuales
+===================================================== */
+
+/* ----- Contenedor con Estilos ----- */
+/*
+ * Contenedor que da estilo visual al iframe
+ * Incluye:
+ * - Ancho máximo de 800px (más estrecho que el contenedor)
+ * - Altura dinámica (70vh)
+ * - Borde y sombra para destacar
+ * - Esquinas redondeadas
+ * - Fondo blanco
+ */
+.reglamento-iframe-container {
+    width: 100%;
+    max-width: 800px;
+    height: 70vh;
+    min-height: 500px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* =====================================================
+   3.2. IFRAME PRINCIPAL
+   Elemento iframe embebido
+===================================================== */
+
+/* ----- Iframe del Documento ----- */
+/*
+ * Iframe que muestra el documento PDF o HTML
+ * del reglamento oficial
+ * 
+ * Características:
+ * - Ancho y alto completo del contenedor
+ * - Sin borde propio (heredado del contenedor)
+ * - Display block para evitar espacios inline
+ */
+.reglamento-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+
+/* =====================================================
+   3.3. DIMENSIONES Y ESTILOS
+   Configuración de tamaños
+===================================================== */
+
+/*
+ * ALTURA DINÁMICA:
+ * - Desktop: 70vh (70% del viewport)
+ * - Altura mínima: 500px
+ * - Tablet: 55vh (ajustado en media query)
+ * - Móvil: 55vh con mínimo de 350px
+ * 
+ * ANCHO:
+ * - Siempre 100% del contenedor
+ * - Max-width: 800px (documento estilo papel)
+ * - En móvil: max-width: 100% (ancho completo)
+ * 
+ * ESTILO VISUAL:
+ * - Borde gris claro (1px #ccc)
+ * - Esquinas redondeadas (8px)
+ * - Sombra suave (rgba(0,0,0,0.1))
+ * - Fondo blanco para contraste
+ */
+
+
+/* =====================================================
+   4. CONTENEDOR DE BOTÓN
+   Área de navegación y controles
+===================================================== */
+
+/* ----- Contenedor de Botón ----- */
+/*
+ * Contenedor para botones de acción
+ * Ej: "Regresar", "Descargar PDF", etc.
+ * 
+ * Características:
+ * - Ancho completo con máximo de 1200px
+ * - Margen superior de 30px
+ * - Padding lateral de 20px
+ * - Alineación centrada del texto
+ * 
+ * Nota: En desktop podría estar alineado a la derecha,
+ * pero el CSS actual lo mantiene centrado para consistencia
+ */
+.button-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/*
+ * NOTA: Los estilos del botón (.btn) se heredan
+ * de styles.css - no se redefinen aquí
+ * 
+ * Botones típicos usados:
+ * - .btn.btn-blue-primary: Botón azul principal
+ * - .btn.btn-secondary: Botón secundario (rojo)
+ * - .btn.btn-accent: Botón de acento (amarillo)
+ */
+
+
+/* =====================================================
+   5. RESPONSIVE DESIGN
+   Adaptaciones para diferentes tamaños de pantalla
+===================================================== */
+
+/* =====================================================
+   5.1. TABLETS Y MÓVILES (≤768px)
+===================================================== */
+@media (max-width: 768px) {
+    
+    /* --- Contenedor de Reglamento --- */
+    /*
+     * Reducir padding lateral en tablets
+     * para aprovechar mejor el espacio horizontal
+     */
+    .reglamento-container {
+        padding: 0 15px;
+    }
+
+    /* --- Contenedor del Iframe --- */
+    /*
+     * Ajustes para tablets:
+     * - Reducir altura a 55vh
+     * - Reducir altura mínima a 350px
+     * - Ancho completo (max-width: 100%)
+     * 
+     * Estos cambios permiten:
+     * - Mejor uso del espacio vertical limitado
+     * - Aprovechamiento del ancho completo
+     * - Scroll más natural del documento
+     */
+    .reglamento-iframe-container {
+        height: 55vh;
+        min-height: 350px;
+        max-width: 100%;
+    }
+
+    /* --- Contenedor de Botón --- */
+    /*
+     * Reducir padding lateral
+     * Mantener alineación centrada
+     */
+    .button-container {
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    /* --- Títulos --- */
+    /*
+     * Reducir tamaño de fuente en tablets
+     * para mejor legibilidad en pantallas pequeñas
+     */
+    .reglamento-container h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .reglamento-container h3 {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* =====================================================
+   NOTAS DE IMPLEMENTACIÓN
+===================================================== */
+
+/*
+ * ===== CARACTERÍSTICAS PRINCIPALES =====
+ * 
+ * 1. DOCUMENTO EMBEBIDO
+ *    - Soporte para PDF embebido
+ *    - Soporte para Google Docs viewer
+ *    - Soporte para contenido HTML
+ *    - Scroll interno del documento
+ * 
+ * 2. DISEÑO LIMPIO
+ *    - Enfoque en el contenido (documento)
+ *    - Estilo de "papel" con borde y sombra
+ *    - Ancho optimizado para lectura (800px)
+ *    - Fondo blanco para mejor legibilidad
+ * 
+ * 3. RESPONSIVIDAD
+ *    - Altura basada en viewport
+ *    - Ancho completo en móviles
+ *    - Alturas mínimas garantizadas
+ *    - Ajustes de tipografía
+ * 
+ * ===== ESTRUCTURA HTML ESPERADA =====
+ * 
+ * <div class="reglamento-container">
+ *   <h1>REGLAMENTO OFICIAL</h1>
+ *   <h3>Reglas del Juego de Dodgeball</h3>
+ *   
+ *   <div class="reglamento-iframe-container">
+ *     <iframe 
+ *       class="reglamento-iframe"
+ *       src="[URL_DEL_DOCUMENTO]"
+ *       allowfullscreen>
+ *     </iframe>
+ *   </div>
+ * </div>
+ * 
+ * <div class="button-container">
+ *   <a href="principal.html" class="btn btn-blue-primary">
+ *     <i class="fas fa-arrow-left"></i> Regresar
+ *   </a>
+ * </div>
+ * 
+ * ===== CONFIGURACIÓN DEL IFRAME =====
+ * 
+ * Para PDF embebido directo:
+ * <iframe src="documentos/reglamento.pdf"></iframe>
+ * 
+ * Para Google Docs Viewer (recomendado):
+ * <iframe src="https://docs.google.com/viewer?url=[URL_PDF]&embedded=true"></iframe>
+ * 
+ * Para Google Drive compartido:
+ * <iframe src="https://drive.google.com/file/d/[ID]/preview"></iframe>
+ * 
+ * Atributos recomendados:
+ * - allowfullscreen: Permite pantalla completa
+ * - loading="lazy": Carga diferida (opcional)
+ * 
+ * ===== VARIABLES REQUERIDAS (de styles.css) =====
+ * 
+ * --primary: Color principal (título h1)
+ * --dark: Color oscuro (subtítulo h3)
+ * 
+ * Los botones también usan:
+ * --secondary, --accent (según el tipo de botón)
+ * 
+ * ===== AJUSTES CON FIX-SPACING.CSS =====
+ * 
+ * El archivo fix-spacing.css ajusta:
+ * 
+ * Desktop:
+ * .reglamento-container { margin-top: 30px !important; }
+ * 
+ * Tablet (≤768px):
+ * .reglamento-container { margin-top: 20px !important; }
+ * 
+ * Móvil (≤576px):
+ * .reglamento-container { margin-top: 15px !important; }
+ * 
+ * Esto reduce el espaciado superior excesivo
+ * causado por el header sticky.
+ * 
+ * ===== CONSIDERACIONES DE PDF =====
+ * 
+ * Problemas comunes con PDF embebidos:
+ * 
+ * 1. Navegadores móviles:
+ *    - Safari iOS no soporta PDF embebido directamente
+ *    - Solución: Usar Google Docs Viewer
+ *    - Alternativa: Enlace de descarga directa
+ * 
+ * 2. Controles del PDF:
+ *    - Algunos navegadores muestran controles propios
+ *    - Otros requieren scroll del iframe
+ *    - Considerar viewer de terceros para consistencia
+ * 
+ * 3. Rendimiento:
+ *    - PDFs grandes pueden tardar en cargar
+ *    - Considerar mostrar spinner de carga
+ *    - Optimizar tamaño del PDF (<5MB recomendado)
+ * 
+ * ===== MEJORAS FUTURAS POSIBLES =====
+ * 
+ * 1. Estado de carga
+ *    - Spinner mientras carga el documento
+ *    - Skeleton screen
+ *    - Barra de progreso
+ * 
+ * 2. Controles adicionales
+ *    - Botón de descarga del PDF
+ *    - Botón de impresión
+ *    - Botón de zoom
+ *    - Selector de versión (si hay múltiples)
+ * 
+ * 3. Metadatos
+ *    - Fecha de última actualización
+ *    - Versión del reglamento
+ *    - Número de páginas
+ *    - Tabla de contenidos
+ * 
+ * 4. Búsqueda
+ *    - Búsqueda dentro del documento
+ *    - Resaltado de términos
+ * 
+ * 5. Fallback
+ *    - Mensaje si el iframe no carga
+ *    - Enlace de descarga alternativo
+ *    - Versión en texto plano
+ * 
+ * ===== ACCESIBILIDAD =====
+ * 
+ * - Título descriptivo en el iframe
+ * - Contraste adecuado en títulos
+ * - Áreas clicables grandes en botones
+ * - Navegación con teclado funcional
+ * - Alt text en elementos gráficos
+ * - Estructura semántica HTML5
+ * 
+ * ===== RENDIMIENTO =====
+ * 
+ * Optimizaciones:
+ * - Iframe carga asíncronamente
+ * - No bloquea renderizado de página
+ * - Considerar loading="lazy"
+ * - Comprimir PDF antes de subir
+ * - Usar CDN para servir documentos
+ * 
+ * Tamaños recomendados:
+ * - PDF: Máximo 5MB
+ * - Resolución: 150dpi para lectura en pantalla
+ * - Compresión: PDF/A para archivado
+ * 
+ * ===== COMPATIBILIDAD DE NAVEGADORES =====
+ * 
+ * Soporte de PDF embebido:
+ * 
+ * Chrome/Edge: ✓ Visor nativo completo
+ * Firefox: ✓ Visor nativo (PDF.js)
+ * Safari Desktop: ✓ Visor nativo
+ * Safari iOS: ✗ Necesita Google Docs Viewer
+ * Android Chrome: ✓ Descarga automática o viewer
+ * 
+ * Recomendación:
+ * Usar Google Docs Viewer para compatibilidad universal:
+ * https://docs.google.com/viewer?url=[URL]&embedded=true
+ * 
+ * ===== SEGURIDAD =====
+ * 
+ * Mejores prácticas:
+ * - Servir PDF desde mismo dominio (CORS)
+ * - Usar HTTPS siempre
+ * - No embeber PDFs de fuentes no confiables
+ * - Validar integridad del archivo
+ * - Considerar firma digital del documento
+ * 
+ * Si se usa contenido externo:
+ * <iframe sandbox="allow-scripts allow-same-origin" ...>
+ * 
+ * ===== TESTING =====
+ * 
+ * Verificar en:
+ * 1. Desktop: Chrome, Firefox, Safari, Edge
+ * 2. Móvil: Safari iOS, Chrome Android
+ * 3. Tablet: iPad, Android tablets
+ * 4. Diferentes resoluciones
+ * 5. Orientación landscape y portrait
+ * 6. Con y sin scroll del documento
+ * 
+ * Casos de prueba:
+ * - PDF carga correctamente
+ * - Scroll funciona en todas las plataformas
+ * - Botones son clicables y funcionales
+ * - Títulos se leen correctamente
+ * - Responsive funciona en todos los breakpoints
+ * 
+ * ===== MANTENIMIENTO =====
+ * 
+ * Actualizar cuando:
+ * - Cambie el reglamento oficial
+ * - Se añadan nuevas versiones
+ * - Haya problemas de carga reportados
+ * - Se necesiten nuevos controles
+ * - Cambien los requisitos de diseño
+ * 
+ * Checklist de actualización:
+ * □ Subir nuevo PDF
+ * □ Actualizar URL en iframe
+ * □ Verificar que carga correctamente
+ * □ Probar en móvil y desktop
+ * □ Actualizar fecha de versión (si aplica)
+ * □ Notificar a usuarios del cambio
+ */
+
+
+/* =====================================================
+   FIN DE REGLAMENTOS.CSS
+===================================================== */

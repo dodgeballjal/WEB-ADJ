@@ -1,0 +1,1490 @@
+/* =====================================================
+   AVISO-PRIVACIDAD.CSS - PÁGINA DE POLÍTICA DE PRIVACIDAD
+   Asociación de Dodgeball Jalisco
+   
+   PROPÓSITO:
+   Estilos modernos y profesionales para la página de
+   aviso de privacidad, con diseño limpio y organizado
+   para facilitar la lectura de información legal.
+   
+   TABLA DE CONTENIDOS:
+   1. Variables de Color
+   2. Contenedor Principal
+   3. Hero Section
+   4. Navegación Rápida
+   5. Contenido de Privacidad
+      5.1. Secciones
+      5.2. Headers de Sección
+      5.3. Numeración
+   6. Componentes Informativos
+      6.1. Tarjetas de Contacto
+      6.2. Categorías de Datos
+      6.3. Listas de Verificación
+   7. Alertas y Avisos
+   8. Bloques de Propósito
+   9. Media Grid (Uso de Imagen)
+   10. Tarjetas de Información
+   11. Compartir Datos
+   12. Seguridad
+   13. Línea de Tiempo
+   14. Derechos ARCO
+   15. Pasos para Ejercer Derechos
+   16. Menores de Edad
+   17. Cambios al Aviso
+   18. Sección de Acción
+   19. Descarga PDF
+   20. Botón Scroll Top
+   21. Responsive Design
+===================================================== */
+
+
+/* =====================================================
+   1. VARIABLES DE COLOR
+   Paleta de colores específica para privacidad
+===================================================== */
+:root {
+    /* Colores Primarios */
+    --privacy-primary: #1a3a8f;      /* Azul principal */
+    --privacy-secondary: #2a9d8f;    /* Verde secundario */
+    --privacy-accent: #fca311;       /* Amarillo/Naranja */
+    --privacy-dark: #1d3557;         /* Azul oscuro */
+    --privacy-light: #f8f9fa;        /* Gris claro */
+    
+    /* Colores de Estado */
+    --privacy-success: #2a9d8f;      /* Verde éxito */
+    --privacy-warning: #ffc107;      /* Amarillo advertencia */
+    --privacy-danger: #e63946;       /* Rojo peligro */
+    --privacy-info: #2196F3;         /* Azul información */
+}
+
+
+/* =====================================================
+   2. CONTENEDOR PRINCIPAL
+   Layout base de la página
+===================================================== */
+.privacy-main {
+    padding: 120px 0 60px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+
+/* =====================================================
+   3. HERO SECTION
+   Portada principal con información destacada
+===================================================== */
+
+/* ----- Contenedor del Hero ----- */
+.privacy-hero {
+    text-align: center;
+    padding: 60px 30px;
+    background: linear-gradient(135deg, var(--privacy-primary) 0%, var(--privacy-secondary) 100%);
+    border-radius: 20px;
+    color: white;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+/* ----- Icono Principal ----- */
+.hero-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: pulse 2s ease infinite;
+}
+
+/* Animación de pulso para el icono */
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(1); 
+    }
+    50% { 
+        transform: scale(1.05); 
+    }
+}
+
+/* ----- Título Principal ----- */
+.privacy-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* ----- Subtítulo ----- */
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    opacity: 0.95;
+}
+
+/* ----- Organización ----- */
+.hero-org {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* ----- Badge de Actualización ----- */
+.update-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.2);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    margin-top: 15px;
+}
+
+.update-badge i {
+    font-size: 1.1rem;
+}
+
+
+/* =====================================================
+   4. NAVEGACIÓN RÁPIDA
+   Sistema de accesos directos a secciones
+===================================================== */
+
+/* ----- Contenedor de Navegación ----- */
+.quick-nav {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* ----- Título de Navegación ----- */
+.quick-nav h3 {
+    color: var(--privacy-primary);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ----- Grid de Navegación ----- */
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+/* ----- Item de Navegación ----- */
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 15px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--privacy-dark);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Estado hover del item */
+.nav-item:hover {
+    background: linear-gradient(135deg, var(--privacy-primary) 0%, var(--privacy-secondary) 100%);
+    color: white;
+    border-color: var(--privacy-secondary);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Icono del item */
+.nav-item i {
+    font-size: 1.8rem;
+}
+
+/* Texto del item */
+.nav-item span {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+
+/* =====================================================
+   5. CONTENIDO DE PRIVACIDAD
+   Estructura principal del documento
+===================================================== */
+
+/* ----- Contenedor Principal ----- */
+.privacy-content {
+    background: white;
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+
+/* =====================================================
+   5.1. SECCIONES
+   Bloques individuales de información
+===================================================== */
+.privacy-section {
+    position: relative;
+    padding: 40px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* Última sección sin borde inferior */
+.privacy-section:last-child {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   5.2. HEADERS DE SECCIÓN
+   Títulos y encabezados de cada sección
+===================================================== */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--privacy-secondary);
+}
+
+/* Icono del header */
+.section-header i {
+    font-size: 2.5rem;
+    color: var(--privacy-secondary);
+}
+
+/* Título del header */
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--privacy-primary);
+    margin: 0;
+}
+
+
+/* =====================================================
+   5.3. NUMERACIÓN
+   Números grandes de fondo para cada sección
+===================================================== */
+.section-number {
+    position: absolute;
+    left: -60px;
+    top: 40px;
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(26, 58, 143, 0.08);
+    line-height: 1;
+}
+
+/* ----- Cuerpo de Sección ----- */
+.section-body {
+    padding-left: 70px;
+}
+
+
+/* =====================================================
+   6. COMPONENTES INFORMATIVOS
+   Elementos para presentar información
+===================================================== */
+
+/* =====================================================
+   6.1. TARJETAS DE CONTACTO
+   Información de contacto destacada
+===================================================== */
+
+/* Grid de contactos */
+.contact-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* Item individual de contacto */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border-left: 4px solid var(--privacy-secondary);
+}
+
+/* Icono de contacto */
+.contact-item i {
+    font-size: 2rem;
+    color: var(--privacy-secondary);
+}
+
+/* Etiqueta de contacto */
+.contact-item .label {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Enlace de contacto */
+.contact-item a {
+    color: var(--privacy-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--privacy-secondary);
+}
+
+
+/* =====================================================
+   6.2. CATEGORÍAS DE DATOS
+   Bloques de tipos de datos recopilados
+===================================================== */
+.data-category {
+    margin: 30px 0;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid var(--privacy-info);
+}
+
+/* Título de categoría */
+.data-category h3 {
+    color: var(--privacy-primary);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Icono de categoría */
+.data-category h3 i {
+    color: var(--privacy-info);
+}
+
+
+/* =====================================================
+   6.3. LISTAS DE VERIFICACIÓN
+   Listas con iconos de check
+===================================================== */
+.check-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 12px;
+}
+
+/* Item de lista */
+.check-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+}
+
+/* Icono de check */
+.check-list li i {
+    color: var(--privacy-success);
+    font-size: 1.1rem;
+}
+
+
+/* =====================================================
+   7. ALERTAS Y AVISOS
+   Cajas de información importante
+===================================================== */
+
+/* ----- Alerta Base ----- */
+.alert {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 25px 0;
+    border-left: 4px solid;
+}
+
+/* Icono de alerta */
+.alert i {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* Texto fuerte en alerta */
+.alert strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* ----- Variantes de Alerta ----- */
+
+/* Alerta de advertencia */
+.alert-warning {
+    background: #fff3cd;
+    border-color: var(--privacy-warning);
+    color: #856404;
+}
+
+.alert-warning i {
+    color: var(--privacy-warning);
+}
+
+/* Alerta de información */
+.alert-info {
+    background: #e3f2fd;
+    border-color: var(--privacy-info);
+    color: #0d47a1;
+}
+
+.alert-info i {
+    color: var(--privacy-info);
+}
+
+/* Alerta de éxito */
+.alert-success {
+    background: #e8f5e9;
+    border-color: var(--privacy-success);
+    color: #1b5e20;
+}
+
+.alert-success i {
+    color: var(--privacy-success);
+}
+
+
+/* =====================================================
+   8. BLOQUES DE PROPÓSITO
+   Finalidades primarias y secundarias
+===================================================== */
+
+/* ----- Bloque Base ----- */
+.purpose-block {
+    margin: 30px 0;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* ----- Bloque Primario ----- */
+/* Finalidades necesarias */
+.purpose-block.primary {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+    border: 2px solid #ffcdd2;
+}
+
+.purpose-block.primary h3 {
+    color: var(--privacy-danger);
+}
+
+.purpose-block.primary .purpose-list li i {
+    color: var(--privacy-danger);
+}
+
+/* ----- Bloque Secundario ----- */
+/* Finalidades opcionales */
+.purpose-block.secondary {
+    background: linear-gradient(135deg, #f3f9f3 0%, #e6f4e6 100%);
+    border: 2px solid #c8e6c9;
+}
+
+.purpose-block.secondary h3 {
+    color: var(--privacy-success);
+}
+
+.purpose-block.secondary .purpose-list li i {
+    color: var(--privacy-success);
+}
+
+/* ----- Títulos de Bloque ----- */
+.purpose-block h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ----- Introducción ----- */
+.purpose-intro {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* ----- Lista de Propósitos ----- */
+.purpose-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+
+/* Item de lista */
+.purpose-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    background: white;
+    border-radius: 8px;
+}
+
+/* Icono de item */
+.purpose-list li i {
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   9. MEDIA GRID (USO DE IMAGEN)
+   Grid de medios donde se usa la imagen
+===================================================== */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+
+/* ----- Item de Media ----- */
+.media-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Estado hover */
+.media-item:hover {
+    background: var(--privacy-secondary);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Icono de media */
+.media-item i {
+    font-size: 2rem;
+    color: var(--privacy-primary);
+    transition: color 0.3s ease;
+}
+
+.media-item:hover i {
+    color: white;
+}
+
+
+/* =====================================================
+   10. TARJETAS DE INFORMACIÓN
+   Tarjetas para información adicional
+===================================================== */
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* ----- Tarjeta Individual ----- */
+.info-card {
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border-top: 4px solid var(--privacy-secondary);
+    transition: all 0.3s ease;
+}
+
+/* Estado hover */
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Título de tarjeta */
+.info-card h4 {
+    color: var(--privacy-primary);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Icono de tarjeta */
+.info-card i {
+    color: var(--privacy-secondary);
+}
+
+
+/* =====================================================
+   11. COMPARTIR DATOS
+   Sección de transferencias de datos
+===================================================== */
+
+/* ----- Categoría de Compartir ----- */
+.sharing-category {
+    margin: 30px 0;
+}
+
+/* Título de categoría */
+.sharing-category h3 {
+    color: var(--privacy-primary);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ----- Lista de Compartir ----- */
+.sharing-list {
+    display: grid;
+    gap: 15px;
+}
+
+/* Item de compartir */
+.sharing-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid var(--privacy-secondary);
+}
+
+/* Icono de item */
+.sharing-item i {
+    font-size: 2rem;
+    color: var(--privacy-secondary);
+    flex-shrink: 0;
+}
+
+/* Título fuerte */
+.sharing-item strong {
+    display: block;
+    color: var(--privacy-primary);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+/* Descripción */
+.sharing-item p {
+    color: #666;
+    margin: 0;
+}
+
+
+/* =====================================================
+   12. SEGURIDAD
+   Medidas de seguridad implementadas
+===================================================== */
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* ----- Item de Seguridad ----- */
+.security-item {
+    text-align: center;
+    padding: 25px 15px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Estado hover */
+.security-item:hover {
+    background: var(--privacy-primary);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ----- Icono de Seguridad ----- */
+.security-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--privacy-primary) 0%, var(--privacy-secondary) 100%);
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+/* Icono en hover */
+.security-item:hover .security-icon {
+    background: white;
+    color: var(--privacy-primary);
+}
+
+/* ----- Título y Descripción ----- */
+.security-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.security-item p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.security-item:hover p {
+    color: rgba(255,255,255,0.9);
+}
+
+
+/* =====================================================
+   13. LÍNEA DE TIEMPO
+   Plazos de conservación de datos
+===================================================== */
+.timeline-table {
+    display: grid;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+/* ----- Fila de Timeline ----- */
+.timeline-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Estado hover */
+.timeline-row:hover {
+    background: var(--privacy-secondary);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ----- Tipo de Timeline ----- */
+.timeline-type {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+}
+
+/* Icono de tipo */
+.timeline-type i {
+    font-size: 1.8rem;
+    color: var(--privacy-primary);
+}
+
+.timeline-row:hover .timeline-type i {
+    color: white;
+}
+
+/* ----- Período ----- */
+.timeline-period {
+    padding-left: 20px;
+    border-left: 3px solid var(--privacy-secondary);
+}
+
+.timeline-row:hover .timeline-period {
+    border-left-color: white;
+}
+
+/* ----- Nota ----- */
+.note {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff3cd;
+    border-left: 4px solid var(--privacy-warning);
+    border-radius: 8px;
+    color: #856404;
+}
+
+
+/* =====================================================
+   14. DERECHOS ARCO
+   Sección de derechos del usuario
+===================================================== */
+
+/* ----- Texto Introductorio ----- */
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* ----- Grid de Derechos ----- */
+.rights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+/* ----- Tarjeta de Derecho ----- */
+.right-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Estado hover */
+.right-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* ----- Icono de Derecho ----- */
+.right-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    color: white;
+}
+
+/* Variantes de icono */
+.right-icon.access {
+    background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+}
+
+.right-icon.rectification {
+    background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+}
+
+.right-icon.cancellation {
+    background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+}
+
+.right-icon.opposition {
+    background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+}
+
+/* ----- Título y Descripción ----- */
+.right-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--privacy-primary);
+}
+
+.right-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ----- Bloque de Revocación ----- */
+.revocation-block {
+    margin-top: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+    border-radius: 12px;
+    border-left: 4px solid var(--privacy-warning);
+}
+
+.revocation-block h3 {
+    color: var(--privacy-primary);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.revocation-block i {
+    color: var(--privacy-warning);
+}
+
+
+/* =====================================================
+   15. PASOS PARA EJERCER DERECHOS
+   Proceso paso a paso
+===================================================== */
+
+/* ----- Contenedor de Pasos ----- */
+.steps-container {
+    display: grid;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* ----- Tarjeta de Paso ----- */
+.step-card {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 25px;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    align-items: start;
+    transition: all 0.3s ease;
+}
+
+/* Estado hover */
+.step-card:hover {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* ----- Número de Paso ----- */
+.step-number {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--privacy-primary) 0%, var(--privacy-secondary) 100%);
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ----- Contenido de Paso ----- */
+.step-content h4 {
+    color: var(--privacy-primary);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+/* Enlace de email */
+.email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: var(--privacy-secondary);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    margin: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.email-link:hover {
+    background: var(--privacy-primary);
+    transform: translateX(5px);
+}
+
+/* Nota del paso */
+.step-note {
+    font-style: italic;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* ----- Lista de Requisitos ----- */
+.requirements-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.requirements-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+}
+
+.requirements-list li i {
+    color: var(--privacy-success);
+}
+
+/* ----- Badges de Plazo ----- */
+.deadline-badges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.deadline-badge {
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid var(--privacy-secondary);
+}
+
+.deadline-badge i {
+    font-size: 2rem;
+    color: var(--privacy-secondary);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.deadline-badge strong {
+    display: block;
+    color: var(--privacy-primary);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.deadline-badge span {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+/* =====================================================
+   16. MENORES DE EDAD
+   Protecciones especiales
+===================================================== */
+.minors-protections {
+    display: grid;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* ----- Item de Protección ----- */
+.protection-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid var(--privacy-info);
+}
+
+.protection-item i {
+    font-size: 2rem;
+    color: var(--privacy-info);
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   17. CAMBIOS AL AVISO
+   Notificación de actualizaciones
+===================================================== */
+
+/* ----- Métodos de Notificación ----- */
+.notification-methods {
+    margin-top: 25px;
+}
+
+.notification-methods h4 {
+    color: var(--privacy-primary);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+/* Grid de métodos */
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* Item de método */
+.method-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.method-item:hover {
+    background: var(--privacy-secondary);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.method-item i {
+    font-size: 2.5rem;
+    color: var(--privacy-primary);
+}
+
+.method-item:hover i {
+    color: white;
+}
+
+
+/* =====================================================
+   18. SECCIÓN DE ACCIÓN
+   Llamado a la acción final
+===================================================== */
+.action-section {
+    margin-top: 40px;
+}
+
+/* ----- Tarjeta de Acción ----- */
+.action-card {
+    text-align: center;
+    padding: 50px 30px;
+    background: linear-gradient(135deg, var(--privacy-primary) 0%, var(--privacy-secondary) 100%);
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.action-card h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.action-card h3 i {
+    margin-right: 10px;
+}
+
+.action-card p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    opacity: 0.95;
+}
+
+/* ----- Botones de Acción ----- */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.action-card .btn-primary,
+.action-card .btn-secondary {
+    background: white;
+    color: var(--privacy-primary);
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.action-card .btn-secondary {
+    background: var(--privacy-danger);
+    color: white;
+}
+
+.action-card .btn-primary:hover {
+    background: var(--privacy-accent);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.action-card .btn-secondary:hover {
+    background: #c1121f;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+
+/* =====================================================
+   19. DESCARGA PDF
+   Botón de descarga en el hero
+===================================================== */
+.pdf-download-hero {
+    margin-top: 25px;
+}
+
+/* ----- Botón PDF ----- */
+.btn-pdf {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 35px;
+    background: var(--privacy-danger);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 5px 20px rgba(230, 57, 70, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-pdf:hover {
+    background: #c1121f;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(230, 57, 70, 0.6);
+}
+
+.btn-pdf i {
+    font-size: 1.3rem;
+}
+
+/* Nota del PDF */
+.pdf-note {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+
+/* =====================================================
+   20. BOTÓN SCROLL TOP
+   Botón flotante para volver arriba
+===================================================== */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--privacy-primary) 0%, var(--privacy-secondary) 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+/* Estado visible */
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estado hover */
+.scroll-top:hover {
+    background: linear-gradient(135deg, var(--privacy-secondary) 0%, var(--privacy-primary) 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+
+/* =====================================================
+   21. RESPONSIVE DESIGN
+   Adaptaciones para diferentes tamaños de pantalla
+===================================================== */
+
+/* =====================================================
+   21.1. TABLETS MEDIANAS (≤992px)
+===================================================== */
+@media (max-width: 992px) {
+    
+    /* --- Hero --- */
+    .privacy-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    /* --- Numeración --- */
+    /* Cambiar a posición estática */
+    .section-number {
+        position: static;
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    /* --- Cuerpo de Sección --- */
+    /* Eliminar padding lateral */
+    .section-body {
+        padding-left: 0;
+    }
+
+    /* --- Navegación --- */
+    .nav-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+
+/* =====================================================
+   21.2. TABLETS Y MÓVILES (≤768px)
+===================================================== */
+@media (max-width: 768px) {
+    
+    /* --- Main --- */
+    .privacy-main {
+        padding: 100px 0 40px;
+    }
+
+    /* --- Hero --- */
+    .privacy-hero {
+        padding: 40px 20px;
+    }
+
+    .privacy-hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-icon {
+        font-size: 3rem;
+    }
+
+    /* --- Contenido --- */
+    .privacy-content {
+        padding: 30px 20px;
+    }
+
+    /* --- Headers --- */
+    .section-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    /* --- Timeline --- */
+    .timeline-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Pasos --- */
+    .step-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .step-number {
+        margin: 0 auto 20px;
+    }
+
+    /* --- Scroll Top --- */
+    .scroll-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+
+    /* --- Navegación Rápida --- */
+    .quick-nav {
+        padding: 20px;
+    }
+
+    .nav-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+
+    .nav-item {
+        padding: 15px 10px;
+    }
+
+    .nav-item i {
+        font-size: 1.5rem;
+    }
+
+    .nav-item span {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* =====================================================
+   21.3. MÓVILES PEQUEÑOS (≤576px)
+===================================================== */
+@media (max-width: 576px) {
+    
+    /* --- Hero --- */
+    .privacy-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    /* --- Headers --- */
+    .section-header i {
+        font-size: 2rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+
+    /* --- Categorías y Bloques --- */
+    .data-category,
+    .purpose-block {
+        padding: 20px;
+    }
+
+    /* --- Listas --- */
+    .check-list,
+    .purpose-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Grids --- */
+    .media-grid,
+    .security-grid,
+    .rights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Tarjeta de Acción --- */
+    .action-card {
+        padding: 30px 20px;
+    }
+
+    .action-card h3 {
+        font-size: 1.5rem;
+    }
+
+    /* --- Botones de Acción --- */
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-card .btn-primary,
+    .action-card .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* --- Botón PDF --- */
+    .btn-pdf {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+
+/* =====================================================
+   FIN DE AVISO-PRIVACIDAD.CSS
+===================================================== */

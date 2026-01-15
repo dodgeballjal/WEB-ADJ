@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Albumnes- ADJ</title>
+    <!-- Favicon - Icono de la pestaña del navegador -->
+    <link rel="icon" type="image/svg+xml" href="imagen/logo-adj.svg">
+    <link rel="icon" type="image/png" href="imagen/logo-adj.png">
+    <link rel="apple-touch-icon" href="imagen/logo-adj.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/galeria.css">
+    <link rel="stylesheet" href="css/fix-spacing.css">
+</head>
+<body>
+        <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="imagen/logo-adj.svg" alt="Logo Asociación de Dodgeball Jalisco">
+                <span>Dodgeball Jalisco</span>
+            </div>
+        
+            <button class="menu-toggle" 
+                aria-label="botón menu-toggle" 
+                id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-inicio">
+                            Inicio <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-inicio">
+                            <a href="principal.html" class="submenu-link">
+                                <i class="fas fa-home"></i> Página Principal
+                            </a>
+                            <a href="principal.html#nosotros" class="submenu-link">
+                                <i class="fa-solid fa-people-group"></i> Nosotros
+                            </a>
+                            <a href="mvv.html" class="submenu-link">
+                                <i class="fa-solid fa-medal"></i> Nuestros Valores
+                            </a>
+                            <a href="organigrama.html" class="submenu-link">
+                                <i class="fa-solid fa-sitemap"></i> Directiva
+                            </a>
+                            <a href="documentos.html" class="submenu-link">
+                                <i class="fa-solid fa-box-archive"></i> Documentos
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-dodgeball">
+                            Dodgeball <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-dodgeball">
+                            <a href="principal.html#juego" class="submenu-link">
+                                <i class="fa-solid fa-question-circle"></i> ¿Qué es Dodgeball?
+                            </a>
+                            <a href="presentacion.html" class="submenu-link">
+                                <i class="fa-solid fa-binoculars"></i> ¿Cómo se juega?
+                            </a>
+                            <a href="reglamentos.html" class="submenu-link">
+                                <i class="fa-solid fa-book"></i> Reglamento deportivo
+                            </a>
+                            <a href="principal.html#equipos" class="submenu-link">
+                                <i class="fa-solid fa-ranking-star"></i> Clubes y Escuelas
+                            </a>
+                            <a href="principal.html#sedes" class="submenu-link">
+                                <i class="fa-solid fa-location-dot"></i> SEDES
+                            </a>
+                            <a href="seleccion_jal.html" class="submenu-link">
+                                <i class="fa-solid fa-star"></i> Selección Jalisco
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-eventos">
+                            Eventos <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-eventos">
+                            <a href="calendario.html" class="submenu-link">
+                                <i class="fa-solid fa-calendar"></i> Calendario 2026
+                            </a>
+                            <a href="torneos_estatales.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Torneos Estatales
+                            </a>
+                            <a href="torneos_nacionales.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Torneos Nacionales
+                            </a>
+                            <a href="liga_metropolitana.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Liga Metropolitana
+                            </a>
+                            <a href="galeria.html" class="submenu-link">
+                                <i class="fa-solid fa-camera"></i> Galería de Eventos
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-solicitudes">
+                            Solicitudes <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-solicitudes">
+                            <a href="#" onclick="openModal('afiliaciones')" class="submenu-link">
+                                <i class="fa-solid fa-id-card-clip"></i> Afiliaciones
+                            </a>
+                            <a href="#" onclick="openModal('cursos')" class="submenu-link">
+                                <i class="fa-solid fa-file-signature"></i> Curso Arbitraje
+                            </a>
+                            <a href="#" onclick="openModal('cursos')" class="submenu-link">
+                                <i class="fa-solid fa-file-signature"></i> Curso Couches
+                            </a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSXrnxf24GRGZqCx2eUlO-GYx1TS6rEgfn06uFFYJup8iu6Q/viewform?usp=sharing&ouid=102655453861620427538" class="submenu-link">
+                                <i class="fa-solid fa-file-pen"></i> Exhibición Gratuita
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-contacto">
+                            Contacto <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-contacto">
+                            <a href="tel:523332363937" class="submenu-link">
+                                <i class="fas fa-phone-alt"></i> Teléfono 332363937
+                            </a>
+                            <a href="mailto:asociacion@dodgeballjalisco.com" class="submenu-link">
+                                <i class="fa-solid fa-envelope"></i> Correo: asociacion@dodgeballjalisco.com
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">Galería de Eventos</h1>
+            <section class="year-section">
+                <h2 class="year-title"><i class="fas fa-calendar-alt"></i> 2025</h2>    
+                <div class="gallery-grid">
+                    <!-- ===== Torneo Estatal infantil ===== -->
+                    <a href="galeria-detalle.html?event=TEI1" class="event-card">
+                        <img src="imagen/2025torneoestatalinfantil.webp" alt="Torneo Estatal Infantil">
+                        <div class="card-overlay">
+                            <span class="event-date"><i class="far fa-calendar"></i> Abril 13 2025</span>
+                            <span class="event-name">Torneo Estatal Infantil</span>
+                        </div>
+                    </a>
+                    <!-- ===== Torneo Estatal libre ===== -->
+                    <a href="galeria-detalle.html?event=TEL1" class="event-card">
+                        <img src="imagen/2025TORNEOESTATALLIBRE.webp" alt="Torneo Estatal Libre">
+                        <div class="card-overlay">
+                            <span class="event-date"><i class="far fa-calendar"></i> Abril 27 2025</span>
+                            <span class="event-name">Torneo Estatal Libre</span>
+                        </div>
+                    </a>
+                    <!-- ===== Torneo Estatal juvenil ===== -->
+                    <a href="galeria-detalle.html?event=TEJ1" class="event-card">
+                        <img src="imagen/2025TORNEOESTATALJUVENIL.webp" alt="Torneo Estatal Juvenil">
+                        <div class="card-overlay">
+                            <span class="event-date"><i class="far fa-calendar"></i> Junio 08 2025</span>
+                            <span class="event-name">Torneo Estatal Juvenil</span>
+                        </div>
+                    </a>
+                    <!-- ===== Campeonato Nacional Infantil ===== -->
+                    <a href="galeria-detalle.html?event=CNI9" class="event-card">
+                        <img src="imagen/2025CAMPNACINFANTIL.webp" alt="Campeonato Nacional Infantil">
+                        <div class="card-overlay">
+                            <span class="event-date"><i class="far fa-calendar"></i> Abril 2025</span>
+                            <span class="event-name">Campeonato Nacional Infantil</span>
+                        </div>
+                    </a>
+                    <!-- ===== Campeonato Nacional Libre ===== -->
+                    <a href="galeria-detalle.html?event=CNL9" class="event-card">
+                        <img src="imagen/2025CAMPNACLIBRE.webp" alt="Campeonato Nacional Libre">
+                        <div class="card-overlay">
+                            <span class="event-date"><i class="far fa-calendar"></i> Mayo 2025</span>
+                            <span class="event-name">Campeonato Nacional Libre</span>
+                        </div>
+                    </a>
+                    <!-- ===== Campeonato Nacional Juvenil ===== -->
+                    <a href="galeria-detalle.html?event=CNJ9" class="event-card">
+                        <img src="imagen/2025CAMPNACJUVENIL.webp" alt="Campeonato Nacional Juvenil">
+                        <div class="card-overlay">
+                            <span class="event-date"><i class="far fa-calendar"></i> Julio 2025</span>
+                            <span class="event-name">Campeonato Nacional Juvenil</span>
+                        </div>
+                    </a>
+                    <!-- ===== Torneo MASTERS ===== -->
+                    <a href="galeria-detalle.html?event=TMST" class="event-card">
+                        <img src="imagen/2025TORNEOMASTERS.webp" alt="Torneo MASTERS 2025">
+                        <div class="card-overlay">
+                            <span class="event-date"><i class="far fa-calendar"></i> Septiembre 20 2025</span>
+                            <span class="event-name">Torneo MASTERS 2025</span>
+                        </div>
+                    </a>
+                    <!-- ===== Torneo Estatal infantil 2025-2026 ===== -->
+                    <a href="galeria-detalle.html?event=TEI2" class="event-card">
+                        <img src="imagen/2025TEI2025-2026.webp" alt="Torneo Estatal Infantil 2025-2026">
+                        <div class="card-overlay">
+                            <span class="event-date"><i class="far fa-calendar"></i> Octubre 12 2025</span>
+                            <span class="event-name">Torneo Estatal Infantil 2025-2026</span>
+                        </div>
+                    </a>
+                    <!-- ===== Torneo Estatal juvenil 2025-2026 ===== -->
+                    <a href="galeria-detalle.html?event=TEJ2" class="event-card">
+                        <img src="imagen/2025TEJ2025-2026.webp" alt="Torneo Estatal Juvenil 2025-2026">
+                        <div class="card-overlay">
+                            <span class="event-date"><i class="far fa-calendar"></i> Noviembre 09 2025</span>
+                            <span class="event-name">Torneo Estatal Juvenil 2025-2026</span>
+                        </div>
+                    </a>
+                    <!-- ===== Torneo Estatal libre 2025-2026 ===== -->
+                    <a href="galeria-detalle.html?event=TEL2" class="event-card">
+                        <img src="imagen/2025TEL2025-2026.webp" alt="Torneo Estatal Libre 2025-2026">
+                        <div class="card-overlay">
+                            <span class="event-date"><i class="far fa-calendar"></i> Noviembre 23 2025</span>
+                            <span class="event-name">Torneo Estatal Libre 2025-2026</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="footer-simple">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="mailto:asociacion@dodgeballjalisco.com">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="tel:523332363937">
+                        <i class="fas fa-phone"></i> Teléfono
+                    </a>
+                    <a href="https://wa.me/523332363937?text=Hola%2C%20me%20gustaría%20más%20información%20sobre%20el%20Dodgeball." target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Asociación de Dodgeball Jalisco. Todos los derechos reservados.</p>
+                <p><a href="aviso-privacidad.html" style="color:#aaa; text-decoration: none;">Aviso de Privacidad</a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/galeria.js"></script>
+
+    <!-- ===== MODAL EN CONSTRUCCIÓN ===== -->
+    <div id="modalOverlay" class="modal-overlay" onclick="closeModalIfOutside(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <button 
+                    type="button"
+                    class="modal-close" 
+                    onclick="closeModal()"
+                    aria-label="Cerrar modal">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h2 id="modalTitle">Sección en Construcción</h2>
+                <p id="modalSubtitle">Próximamente disponible</p>
+            </div>
+
+            <div class="modal-body">
+                <div id="modalContent"></div>
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>¡Gracias por tu interés!</h3>
+                    <p>Te notificaremos cuando esta sección esté disponible.</p>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+                        Revisa tu email para confirmar el registro.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

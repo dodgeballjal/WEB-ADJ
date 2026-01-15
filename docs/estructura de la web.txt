@@ -1,0 +1,46 @@
+
+# Documentación Técnica
+**Versión:** 2.0  
+**Última actualización:** Enero 2026  
+**Desarrollado para:** Asociación de Dodgeball Jalisco A.C.
+
+### Estructura del Proyecto
+
+```
+adj-website/
+│
+├── index.html (→ principal.html)
+├── principal.html          # Página principal
+├── galeria.html            # Lista de eventos
+├── galeria-detalle.html    # Galería de fotos
+├── mvv.html                # Misión, Visión, Valores
+├── organigrama.html        # Estructura organizacional
+├── presentacion.html       # Presentación institucional
+├── reglamentos.html        # Reglamentos oficiales
+│
+├── css/
+│   ├── styles.css          # Estilos globales
+│   ├── principal.css       # Estilos página principal
+│   ├── galeria.css         # Estilos galería
+│   ├── galeria-detalle.css # Estilos detalle galería
+│   ├── mvv.css             # Estilos MVV
+│   ├── organigrama.css     # Estilos organigrama
+│   ├── presentacion.css    # Estilos presentación
+│   └── reglamentos.css     # Estilos reglamentos
+│
+├── js/
+│   ├── main.js             # Script principal (consolidado)
+│   ├── galeria-detalle.js  # Funcionalidad galería
+│   └── mvv.js              # Funcionalidad MVV (opcional)
+│
+├── imagen/
+│   ├── logo-adj.svg
+│   ├── hero-portada.jpg
+│   ├── organigrama-fotos/
+│   ├── 2025*.webp          # Imágenes de eventos
+│   └── ...
+│
+└── docs/
+    ├── README.md
+    └── TECHNICAL.md        # Este documento
+```

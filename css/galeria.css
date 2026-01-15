@@ -1,0 +1,333 @@
+/* =====================================================
+   GALERIA.CSS - PÁGINA DE GALERÍA DE EVENTOS
+   Asociación de Dodgeball Jalisco
+   
+   PROPÓSITO:
+   Estilos para la página principal de galería que muestra
+   todos los eventos organizados por año con tarjetas
+   visuales de cada evento.
+   
+   TABLA DE CONTENIDOS:
+   1. Contenedor Principal
+   2. Título de Página
+   3. Secciones por Año
+   4. Grid de Galería
+   5. Tarjetas de Evento
+      5.1. Estructura Base
+      5.2. Imagen de Fondo
+      5.3. Overlay de Texto
+      5.4. Efectos Hover
+   6. Responsive Design
+===================================================== */
+
+
+/* =====================================================
+   1. CONTENEDOR PRINCIPAL
+   Layout base de la página
+===================================================== */
+
+/* ----- Main Content ----- */
+/* 
+ * Espaciado principal para la página
+ * El padding superior se ajusta con fix-spacing.css
+ */
+.main-content {
+    flex: 1;
+    padding: 140px 0 60px;
+}
+
+
+/* =====================================================
+   2. TÍTULO DE PÁGINA
+   Título principal de la galería
+===================================================== */
+
+/* ----- Título Principal ----- */
+.page-title {
+    text-align: center;
+    margin-bottom: 0px;
+    color: var(--primary);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   3. SECCIONES POR AÑO
+   Agrupación de eventos por año
+===================================================== */
+
+/* ----- Contenedor de Año ----- */
+.year-section {
+    margin-bottom: 10px;
+}
+
+/* ----- Título de Año ----- */
+.year-title {
+    font-size: 2rem;
+    color: var(--dark);
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+
+/* Icono del título */
+.year-title i {
+    margin-right: 10px;
+    color: var(--accent);
+}
+
+
+/* =====================================================
+   4. GRID DE GALERÍA
+   Sistema de cuadrícula para las tarjetas
+===================================================== */
+
+/* ----- Grid Principal ----- */
+/*
+ * Grid responsivo que se adapta automáticamente
+ * Mínimo: 280px por tarjeta
+ * Máximo: 1fr (fracción del espacio disponible)
+ */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+
+/* =====================================================
+   5. TARJETAS DE EVENTO
+   Componentes visuales para cada evento
+===================================================== */
+
+/* =====================================================
+   5.1. ESTRUCTURA BASE
+   Contenedor y configuración inicial
+===================================================== */
+
+/* ----- Tarjeta de Evento ----- */
+/*
+ * Es un enlace completo que actúa como botón
+ * Display: block para ocupar todo el espacio
+ */
+.event-card {
+    position: relative;
+    display: block;
+    height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    background-color: var(--dark);
+}
+
+
+/* =====================================================
+   5.2. IMAGEN DE FONDO
+   Fotografía principal del evento
+===================================================== */
+
+/* ----- Imagen ----- */
+.event-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+
+/* =====================================================
+   5.3. OVERLAY DE TEXTO
+   Superposición con información del evento
+===================================================== */
+
+/* ----- Contenedor del Overlay ----- */
+/*
+ * Gradiente de oscuro a transparente
+ * Posicionado en la parte inferior
+ */
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to top, 
+        rgba(0,0,0,0.9) 0%, 
+        rgba(0,0,0,0.5) 40%, 
+        rgba(0,0,0,0) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+/* ----- Fecha del Evento ----- */
+.event-date {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* Icono de fecha */
+.event-date i {
+    margin-right: 5px;
+}
+
+/* ----- Nombre del Evento ----- */
+.event-name {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+
+/* =====================================================
+   5.4. EFECTOS HOVER
+   Interacciones al pasar el mouse
+===================================================== */
+
+/* ----- Hover en Tarjeta ----- */
+/*
+ * Efecto de elevación y aumento de sombra
+ */
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* ----- Hover en Imagen ----- */
+/*
+ * Zoom suave de la imagen
+ */
+.event-card:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   6. RESPONSIVE DESIGN
+   Adaptaciones para diferentes tamaños de pantalla
+===================================================== */
+
+/* =====================================================
+   6.1. MÓVILES PEQUEÑOS (≤576px)
+===================================================== */
+@media (max-width: 576px) {
+    
+    /* --- Grid de Galería --- */
+    /*
+     * Una sola columna en móviles
+     * Ocupa todo el ancho disponible
+     */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* --- Tarjeta de Evento --- */
+    /*
+     * Altura reducida para pantallas pequeñas
+     */
+    .event-card {
+        height: 200px;
+    }
+    
+    /* --- Título de Página --- */
+    /*
+     * Tamaño de fuente reducido
+     */
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    /* --- Título de Año --- */
+    /*
+     * Tamaño de fuente reducido
+     */
+    .year-title {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* =====================================================
+   NOTAS DE IMPLEMENTACIÓN
+===================================================== */
+
+/*
+ * ===== CARACTERÍSTICAS PRINCIPALES =====
+ * 
+ * 1. GRID RESPONSIVO AUTOMÁTICO
+ *    - No requiere media queries para columnas
+ *    - Se adapta al espacio disponible
+ *    - Mínimo 280px por tarjeta
+ * 
+ * 2. TARJETAS INTERACTIVAS
+ *    - Efecto hover suave
+ *    - Zoom en imagen
+ *    - Elevación con sombra
+ * 
+ * 3. OVERLAY GRADIENTE
+ *    - Legibilidad garantizada del texto
+ *    - Transición de opaco a transparente
+ *    - Información visible siempre
+ * 
+ * ===== ESTRUCTURA HTML ESPERADA =====
+ * 
+ * <div class="gallery-grid">
+ *   <a href="..." class="event-card">
+ *     <img src="..." alt="...">
+ *     <div class="card-overlay">
+ *       <span class="event-date">
+ *         <i class="far fa-calendar"></i> Fecha
+ *       </span>
+ *       <span class="event-name">Nombre</span>
+ *     </div>
+ *   </a>
+ * </div>
+ * 
+ * ===== VARIABLES REQUERIDAS (de styles.css) =====
+ * 
+ * --primary: Color principal (título)
+ * --dark: Color oscuro (fondo tarjeta)
+ * --accent: Color de acento (fecha y borde)
+ * 
+ * ===== MEJORAS FUTURAS POSIBLES =====
+ * 
+ * 1. Animación de entrada para tarjetas
+ * 2. Filtros por categoría de evento
+ * 3. Búsqueda de eventos
+ * 4. Carga perezosa (lazy loading)
+ * 5. Skeleton screens mientras carga
+ * 
+ * ===== ACCESIBILIDAD =====
+ * 
+ * - Las tarjetas son enlaces <a> completos
+ * - Alt text en imágenes obligatorio
+ * - Contraste adecuado en overlay
+ * - Texto legible en todos los tamaños
+ * - Efecto hover visible
+ * 
+ * ===== RENDIMIENTO =====
+ * 
+ * - Transiciones CSS (GPU accelerated)
+ * - Object-fit: cover (optimización de imagen)
+ * - Box-shadow con blur moderado
+ * - Transformaciones suaves
+ */
+
+
+/* =====================================================
+   FIN DE GALERIA.CSS
+===================================================== */

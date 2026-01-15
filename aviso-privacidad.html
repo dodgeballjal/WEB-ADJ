@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aviso de Privacidad de la Asociación de Dodgeball Jalisco A.C. Conoce cómo protegemos y manejamos tus datos personales.">
+    <title>Aviso de Privacidad - ADJ</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="imagen/logo-adj.svg">
+    <link rel="icon" type="image/png" href="imagen/logo-adj.png">
+    <link rel="apple-touch-icon" href="imagen/logo-adj.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/aviso-privacidad.css">
+    <link rel="stylesheet" href="css/fix-spacing.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="imagen/logo-adj.svg" alt="Logo Asociación de Dodgeball Jalisco">
+                <span>Dodgeball Jalisco</span>
+            </div>
+        
+            <button class="menu-toggle" 
+                aria-label="botón menu-toggle" 
+                id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-inicio">
+                            Inicio <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-inicio">
+                            <a href="principal.html" class="submenu-link">
+                                <i class="fas fa-home"></i> Página Principal
+                            </a>
+                            <a href="principal.html#nosotros" class="submenu-link">
+                                <i class="fa-solid fa-people-group"></i> Nosotros
+                            </a>
+                            <a href="mvv.html" class="submenu-link">
+                                <i class="fa-solid fa-medal"></i> Nuestros Valores
+                            </a>
+                            <a href="organigrama.html" class="submenu-link">
+                                <i class="fa-solid fa-sitemap"></i> Directiva
+                            </a>
+                            <a href="documentos.html" class="submenu-link">
+                                <i class="fa-solid fa-box-archive"></i> Documentos
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-dodgeball">
+                            Dodgeball <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-dodgeball">
+                            <a href="principal.html#juego" class="submenu-link">
+                                <i class="fa-solid fa-question-circle"></i> ¿Qué es Dodgeball?
+                            </a>
+                            <a href="presentacion.html" class="submenu-link">
+                                <i class="fa-solid fa-binoculars"></i> ¿Cómo se juega?
+                            </a>
+                            <a href="reglamentos.html" class="submenu-link">
+                                <i class="fa-solid fa-book"></i> Reglamento deportivo
+                            </a>
+                            <a href="principal.html#equipos" class="submenu-link">
+                                <i class="fa-solid fa-ranking-star"></i> Clubes y Escuelas
+                            </a>
+                            <a href="principal.html#sedes" class="submenu-link">
+                                <i class="fa-solid fa-location-dot"></i> SEDES
+                            </a>
+                            <a href="seleccion_jal.html" class="submenu-link">
+                                <i class="fa-solid fa-star"></i> Selección Jalisco
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-eventos">
+                            Eventos <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-eventos">
+                            <a href="calendario.html" class="submenu-link">
+                                <i class="fa-solid fa-calendar"></i> Calendario 2026
+                            </a>
+                            <a href="torneos_estatales.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Torneos Estatales
+                            </a>
+                            <a href="torneos_nacionales.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Torneos Nacionales
+                            </a>
+                            <a href="liga_metropolitana.html" class="submenu-link">
+                                <i class="fa-solid fa-trophy"></i> Liga Metropolitana
+                            </a>
+                            <a href="galeria.html" class="submenu-link">
+                                <i class="fa-solid fa-camera"></i> Galería de Eventos
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-solicitudes">
+                            Solicitudes <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-solicitudes">
+                            <a href="#" onclick="openModal('afiliaciones')" class="submenu-link">
+                                <i class="fa-solid fa-id-card-clip"></i> Afiliaciones
+                            </a>
+                            <a href="#" onclick="openModal('cursos')" class="submenu-link">
+                                <i class="fa-solid fa-file-signature"></i> Curso Arbitraje
+                            </a>
+                            <a href="#" onclick="openModal('cursos')" class="submenu-link">
+                                <i class="fa-solid fa-file-signature"></i> Curso Couches
+                            </a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSXrnxf24GRGZqCx2eUlO-GYx1TS6rEgfn06uFFYJup8iu6Q/viewform?usp=sharing&ouid=102655453861620427538" class="submenu-link">
+                                <i class="fa-solid fa-file-pen"></i> Exhibición Gratuita
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="menu-item">
+                        <a class="menu-link" id="menu-contacto">
+                            Contacto <i class="fas fa-fire"></i>
+                        </a>
+                        <div class="submenu" id="submenu-contacto">
+                            <a href="tel:523332363937" class="submenu-link">
+                                <i class="fas fa-phone-alt"></i> Teléfono 332363937
+                            </a>
+                            <a href="mailto:asociacion@dodgeballjalisco.com" class="submenu-link">
+                                <i class="fa-solid fa-envelope"></i> Correo: asociacion@dodgeballjalisco.com
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Contenido Principal -->
+    <main class="privacy-main">
+        <div class="container">
+            <!-- Hero Section -->
+            <div class="privacy-hero">
+                <div class="hero-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h1>Aviso de Privacidad</h1>
+                <p class="hero-subtitle">Manejo de Datos Personales</p>
+                <p class="hero-org">Asociación de Dodgeball Jalisco A.C.</p>
+                <div class="update-badge">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>Última actualización: Enero 2026</span>
+                </div>
+                
+                <!-- Botón para descargar PDF -->
+                <div class="pdf-download-hero">
+                    <a href="docs/AVISO_PRIVACIDAD_USO_DATOS_PERSONALES_2026.pdf" target="_blank" class="btn-pdf" download>
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Descargar PDF</span>
+                    </a>
+                    <p class="pdf-note">Versión completa en formato PDF</p>
+                </div>
+            </div>
+
+            <!-- Navegación Rápida -->
+            <nav class="quick-nav">
+                <h3><i class="fas fa-list"></i> Navegación Rápida</h3>
+                <div class="nav-grid">
+                    <a href="#responsable" class="nav-item">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Responsable</span>
+                    </a>
+                    <a href="#datos" class="nav-item">
+                        <i class="fas fa-database"></i>
+                        <span>Datos Recopilados</span>
+                    </a>
+                    <a href="#uso" class="nav-item">
+                        <i class="fas fa-tasks"></i>
+                        <span>Uso de Datos</span>
+                    </a>
+                    <a href="#imagen" class="nav-item">
+                        <i class="fas fa-camera"></i>
+                        <span>Uso de Imagen</span>
+                    </a>
+                    <a href="#compartir" class="nav-item">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Compartir Datos</span>
+                    </a>
+                    <a href="#seguridad" class="nav-item">
+                        <i class="fas fa-lock"></i>
+                        <span>Seguridad</span>
+                    </a>
+                    <a href="#plazos" class="nav-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Plazos</span>
+                    </a>
+                    <a href="#derechos" class="nav-item">
+                        <i class="fas fa-gavel"></i>
+                        <span>Derechos ARCO</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Contenido del Aviso -->
+            <article class="privacy-content">
+                
+                <!-- Sección 1: Responsable -->
+                <section id="responsable" class="privacy-section">
+                    <div class="section-number">01</div>
+                    <div class="section-header">
+                        <i class="fas fa-user-shield"></i>
+                        <h2>Responsable de la Protección de sus Datos</h2>
+                    </div>
+                    <div class="section-body">
+                        <p><strong>Asociación de Dodgeball Jalisco A.C.</strong> (en adelante "la Asociación"), constituida legalmente en Guadalajara, Jalisco, México, es responsable del tratamiento de sus datos personales.</p>
+                        
+                        <div class="contact-card">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <span class="label">Correo Electrónico</span>
+                                    <a href="mailto:asociacion@dodgeballjalisco.com">asociacion@dodgeballjalisco.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <span class="label">Teléfono</span>
+                                    <a href="tel:+523332363937">33 3236 3937</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección 2: Datos Recopilados -->
+                <section id="datos" class="privacy-section">
+                    <div class="section-number">02</div>
+                    <div class="section-header">
+                        <i class="fas fa-database"></i>
+                        <h2>¿Qué Datos Personales Recopilamos?</h2>
+                    </div>
+                    <div class="section-body">
+                        <p class="intro-text">Para procesar su afiliación, administrar su membresía y procesamiento de solicitudes, recopilamos las siguientes categorías de información:</p>
+                        
+                        <div class="data-category">
+                            <h3><i class="fas fa-id-card"></i> A) Datos de Identificación y Contacto</h3>
+                            <ul class="check-list">
+                                <li><i class="fas fa-check"></i> Nombre completo</li>
+                                <li><i class="fas fa-check"></i> Fecha de nacimiento</li>
+                                <li><i class="fas fa-check"></i> CURP</li>
+                                <li><i class="fas fa-check"></i> Domicilio completo</li>
+                                <li><i class="fas fa-check"></i> Teléfono(s) de contacto</li>
+                                <li><i class="fas fa-check"></i> Correo electrónico</li>
+                                <li><i class="fas fa-check"></i> Fotografía</li>
+                                <li><i class="fas fa-check"></i> Firma autógrafa o electrónica</li>
+                            </ul>
+                        </div>
+
+                        <div class="data-category">
+                            <h3><i class="fas fa-child"></i> B) Datos de Menores de Edad (cuando aplique)</h3>
+                            <ul class="check-list">
+                                <li><i class="fas fa-check"></i> Toda la información anterior del menor</li>
+                                <li><i class="fas fa-check"></i> Nombre completo del padre, madre o tutor legal</li>
+                                <li><i class="fas fa-check"></i> Datos de contacto del responsable legal</li>
+                                <li><i class="fas fa-check"></i> Documento que acredite la tutela o patria potestad</li>
+                            </ul>
+                        </div>
+
+                        <div class="data-category">
+                            <h3><i class="fas fa-heartbeat"></i> C) Datos Sensibles (recopilación opcional)</h3>
+                            <ul class="check-list">
+                                <li><i class="fas fa-check"></i> Información médica relevante (alergias, condiciones de salud)</li>
+                                <li><i class="fas fa-check"></i> Tipo sanguíneo</li>
+                                <li><i class="fas fa-check"></i> Nombre y teléfono de contacto de emergencia</li>
+                            </ul>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div>
+                                <strong>Importante:</strong>
+                                <p>Los datos sensibles requieren su consentimiento expreso y por escrito. Puede negarse a proporcionarlos, pero esto podría limitar su participación en ciertas actividades que requieran esta información por razones de seguridad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección 3: Uso de Datos -->
+                <section id="uso" class="privacy-section">
+                    <div class="section-number">03</div>
+                    <div class="section-header">
+                        <i class="fas fa-tasks"></i>
+                        <h2>¿Para Qué Usamos sus Datos Personales?</h2>
+                    </div>
+                    <div class="section-body">
+                        
+                        <div class="purpose-block primary">
+                            <h3><i class="fas fa-exclamation-circle"></i> Finalidades Primarias (necesarias)</h3>
+                            <p class="purpose-intro">Estas finalidades son indispensables para la relación entre usted y la Asociación:</p>
+                            <ul class="purpose-list">
+                                <li><i class="fas fa-chevron-right"></i> Procesar y validar su solicitud de afiliación</li>
+                                <li><i class="fas fa-chevron-right"></i> Procesar su solicitud de exhibición</li>
+                                <li><i class="fas fa-chevron-right"></i> Procesar su solicitud de inscripción a cursos y capacitaciones</li>
+                                <li><i class="fas fa-chevron-right"></i> Elaborar los certificados de los cursos y capacitaciones</li>
+                                <li><i class="fas fa-chevron-right"></i> Elaborar su credencial de miembro</li>
+                                <li><i class="fas fa-chevron-right"></i> Mantener un registro actualizado de afiliados</li>
+                                <li><i class="fas fa-chevron-right"></i> Elaborar deslindes de responsabilidad legal</li>
+                                <li><i class="fas fa-chevron-right"></i> Cumplir con obligaciones legales, fiscales y administrativas</li>
+                                <li><i class="fas fa-chevron-right"></i> Contactarle en caso de emergencia durante eventos o entrenamientos</li>
+                                <li><i class="fas fa-chevron-right"></i> Gestionar su participación en competencias y torneos oficiales</li>
+                            </ul>
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle"></i>
+                                <p><strong>No puede oponerse</strong> al tratamiento de sus datos para estas finalidades, ya que son necesarias para la prestación del servicio.</p>
+                            </div>
+                        </div>
+
+                        <div class="purpose-block secondary">
+                            <h3><i class="fas fa-star"></i> Finalidades Secundarias (opcionales)</h3>
+                            <p class="purpose-intro">Estas finalidades no son esenciales pero nos ayudan a mejorar nuestros servicios:</p>
+                            <ul class="purpose-list">
+                                <li><i class="fas fa-chevron-right"></i> Enviarle comunicaciones sobre actividades, eventos, talleres y beneficios</li>
+                                <li><i class="fas fa-chevron-right"></i> Uso de su imagen en promoción, difusión y redes sociales</li>
+                                <li><i class="fas fa-chevron-right"></i> Invitarle a eventos deportivos, sociales y de convivencia</li>
+                                <li><i class="fas fa-chevron-right"></i> Elaborar estadísticas y análisis internos para mejorar programas</li>
+                                <li><i class="fas fa-chevron-right"></i> Enviarle felicitaciones en fechas especiales</li>
+                            </ul>
+                            <div class="alert alert-success">
+                                <i class="fas fa-check-circle"></i>
+                                <p><strong>Puede oponerse</strong> al tratamiento de sus datos para estas finalidades en cualquier momento, sin afectar su afiliación.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección 4: Uso de Imagen -->
+                <section id="imagen" class="privacy-section">
+                    <div class="section-number">04</div>
+                    <div class="section-header">
+                        <i class="fas fa-camera"></i>
+                        <h2>Uso de Imagen y Derechos de Difusión</h2>
+                    </div>
+                    <div class="section-body">
+                        <p>Al afiliarse, usted otorga su consentimiento para que la Asociación capture y utilice su imagen (fotografías, videos, voz y grabaciones) en cualquier medio:</p>
+                        
+                        <div class="media-grid">
+                            <div class="media-item">
+                                <i class="fas fa-globe"></i>
+                                <span>Sitio web oficial</span>
+                            </div>
+                            <div class="media-item">
+                                <i class="fab fa-facebook"></i>
+                                <span>Redes sociales</span>
+                            </div>
+                            <div class="media-item">
+                                <i class="fas fa-bullhorn"></i>
+                                <span>Material promocional</span>
+                            </div>
+                            <div class="media-item">
+                                <i class="fas fa-newspaper"></i>
+                                <span>Comunicados de prensa</span>
+                            </div>
+                            <div class="media-item">
+                                <i class="fas fa-book"></i>
+                                <span>Publicaciones internas</span>
+                            </div>
+                        </div>
+
+                        <div class="info-cards">
+                            <div class="info-card">
+                                <h4><i class="fas fa-gift"></i> Carácter Gratuito</h4>
+                                <p>La cesión es gratuita. Usted renuncia a reclamar compensación o regalía por el uso de su imagen.</p>
+                            </div>
+                            <div class="info-card">
+                                <h4><i class="fas fa-calendar-check"></i> Duración</h4>
+                                <p>Este consentimiento es válido por un periodo de <strong>15 años</strong> a partir de la captura.</p>
+                            </div>
+                            <div class="info-card">
+                                <h4><i class="fas fa-ban"></i> Revocación</h4>
+                                <p>Puede solicitar que dejemos de usar su imagen a futuro. Procesamos solicitudes en <strong>10 días hábiles</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección 5: Compartir Datos -->
+                <section id="compartir" class="privacy-section">
+                    <div class="section-number">05</div>
+                    <div class="section-header">
+                        <i class="fas fa-share-alt"></i>
+                        <h2>¿Con Quién Compartimos sus Datos?</h2>
+                    </div>
+                    <div class="section-body">
+                        <p>Sus datos personales pueden ser compartidos en los siguientes casos:</p>
+                        
+                        <div class="sharing-category">
+                            <h3><i class="fas fa-flag"></i> Transferencias Nacionales</h3>
+                            <div class="sharing-list">
+                                <div class="sharing-item">
+                                    <i class="fas fa-trophy"></i>
+                                    <div>
+                                        <strong>Federación Mexicana de Dodgeball</strong>
+                                        <p>Para registro en competencias oficiales y trámites federativos</p>
+                                    </div>
+                                </div>
+                                <div class="sharing-item">
+                                    <i class="fas fa-users"></i>
+                                    <div>
+                                        <strong>Organizadores de torneos</strong>
+                                        <p>Solo información necesaria para inscripciones (nombre, categoría, edad)</p>
+                                    </div>
+                                </div>
+                                <div class="sharing-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <div>
+                                        <strong>Compañías de seguros</strong>
+                                        <p>En caso de contratar pólizas colectivas (previo aviso)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-success">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <strong>Compromiso de Confidencialidad</strong>
+                                <p>No vendemos ni comercializamos sus datos personales con terceros. Todas las transferencias se realizan bajo acuerdos de confidencialidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección 6: Seguridad -->
+                <section id="seguridad" class="privacy-section">
+                    <div class="section-number">06</div>
+                    <div class="section-header">
+                        <i class="fas fa-lock"></i>
+                        <h2>¿Cómo Protegemos sus Datos?</h2>
+                    </div>
+                    <div class="section-body">
+                        <p>Hemos implementado medidas de seguridad administrativas, técnicas y físicas:</p>
+                        
+                        <div class="security-grid">
+                            <div class="security-item">
+                                <div class="security-icon">
+                                    <i class="fas fa-user-lock"></i>
+                                </div>
+                                <h4>Acceso Restringido</h4>
+                                <p>Solo personal autorizado</p>
+                            </div>
+                            <div class="security-item">
+                                <div class="security-icon">
+                                    <i class="fas fa-key"></i>
+                                </div>
+                                <h4>Autenticación</h4>
+                                <p>Contraseñas seguras</p>
+                            </div>
+                            <div class="security-item">
+                                <div class="security-icon">
+                                    <i class="fas fa-hdd"></i>
+                                </div>
+                                <h4>Respaldos</h4>
+                                <p>Información periódica</p>
+                            </div>
+                            <div class="security-item">
+                                <div class="security-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h4>Capacitación</h4>
+                                <p>Personal entrenado</p>
+                            </div>
+                            <div class="security-item">
+                                <div class="security-icon">
+                                    <i class="fas fa-file-signature"></i>
+                                </div>
+                                <h4>Confidencialidad</h4>
+                                <p>Acuerdos firmados</p>
+                            </div>
+                            <div class="security-item">
+                                <div class="security-icon">
+                                    <i class="fas fa-archive"></i>
+                                </div>
+                                <h4>Almacenamiento</h4>
+                                <p>Documentos seguros</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección 7: Plazos -->
+                <section id="plazos" class="privacy-section">
+                    <div class="section-number">07</div>
+                    <div class="section-header">
+                        <i class="fas fa-clock"></i>
+                        <h2>¿Cuánto Tiempo Conservamos sus Datos?</h2>
+                    </div>
+                    <div class="section-body">
+                        <div class="timeline-table">
+                            <div class="timeline-row">
+                                <div class="timeline-type">
+                                    <i class="fas fa-user-check"></i>
+                                    <span>Afiliados activos</span>
+                                </div>
+                                <div class="timeline-period">Durante toda su membresía activa</div>
+                            </div>
+                            <div class="timeline-row">
+                                <div class="timeline-type">
+                                    <i class="fas fa-user-times"></i>
+                                    <span>Afiliados inactivos</span>
+                                </div>
+                                <div class="timeline-period">Hasta 5 años después de la última interacción o baja</div>
+                            </div>
+                            <div class="timeline-row">
+                                <div class="timeline-type">
+                                    <i class="fas fa-child"></i>
+                                    <span>Menores de edad</span>
+                                </div>
+                                <div class="timeline-period">Hasta 5 años después de cumplir la mayoría de edad</div>
+                            </div>
+                            <div class="timeline-row">
+                                <div class="timeline-type">
+                                    <i class="fas fa-file-invoice"></i>
+                                    <span>Datos fiscales/legales</span>
+                                </div>
+                                <div class="timeline-period">El tiempo que establezcan las disposiciones legales</div>
+                            </div>
+                        </div>
+                        <p class="note">Transcurridos estos plazos, sus datos serán eliminados o anonimizados de manera segura.</p>
+                    </div>
+                </section>
+
+                <!-- Sección 8: Derechos ARCO -->
+                <section id="derechos" class="privacy-section">
+                    <div class="section-number">08</div>
+                    <div class="section-header">
+                        <i class="fas fa-gavel"></i>
+                        <h2>Sus Derechos (ARCO) y Revocación del Consentimiento</h2>
+                    </div>
+                    <div class="section-body">
+                        <p class="intro-text">Usted tiene derecho a:</p>
+                        
+                        <div class="rights-grid">
+                            <div class="right-card">
+                                <div class="right-icon access">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h3>Acceso</h3>
+                                <p>Conocer qué datos personales tenemos sobre usted y para qué los usamos</p>
+                            </div>
+                            <div class="right-card">
+                                <div class="right-icon rectification">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <h3>Rectificación</h3>
+                                <p>Solicitar la corrección de datos inexactos, incompletos o desactualizados</p>
+                            </div>
+                            <div class="right-card">
+                                <div class="right-icon cancellation">
+                                    <i class="fas fa-trash-alt"></i>
+                                </div>
+                                <h3>Cancelación</h3>
+                                <p>Solicitar que eliminemos sus datos cuando no estén siendo usados adecuadamente</p>
+                            </div>
+                            <div class="right-card">
+                                <div class="right-icon opposition">
+                                    <i class="fas fa-hand-paper"></i>
+                                </div>
+                                <h3>Oposición</h3>
+                                <p>Oponerse al tratamiento de sus datos para finalidades específicas</p>
+                            </div>
+                        </div>
+
+                        <div class="revocation-block">
+                            <h3><i class="fas fa-undo"></i> Revocación del Consentimiento</h3>
+                            <p>Puede retirar su consentimiento en cualquier momento. Esto puede implicar que no podamos continuar brindándole el servicio.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección 9: Cómo Ejercer Derechos -->
+                <section id="ejercer" class="privacy-section">
+                    <div class="section-number">09</div>
+                    <div class="section-header">
+                        <i class="fas fa-clipboard-check"></i>
+                        <h2>¿Cómo Ejercer sus Derechos ARCO?</h2>
+                    </div>
+                    <div class="section-body">
+                        <p class="intro-text">Para ejercer cualquiera de sus derechos, siga estos pasos:</p>
+                        
+                        <div class="steps-container">
+                            <div class="step-card">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Envíe su Solicitud</h4>
+                                    <p>Por correo electrónico a:</p>
+                                    <a href="mailto:asociacion@dodgeballjalisco.com" class="email-link">
+                                        <i class="fas fa-envelope"></i>
+                                        asociacion@dodgeballjalisco.com
+                                    </a>
+                                    <p class="step-note">Asunto: "Solicitud de Derechos ARCO - [SU NOMBRE]"</p>
+                                </div>
+                            </div>
+
+                            <div class="step-card">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Incluya la Siguiente Información</h4>
+                                    <ul class="requirements-list">
+                                        <li><i class="fas fa-check-circle"></i> Nombre completo del titular</li>
+                                        <li><i class="fas fa-check-circle"></i> Domicilio o correo para recibir respuesta</li>
+                                        <li><i class="fas fa-check-circle"></i> Identificación oficial (INE/pasaporte)</li>
+                                        <li><i class="fas fa-check-circle"></i> Descripción clara del derecho a ejercer</li>
+                                        <li><i class="fas fa-check-circle"></i> Documentos que faciliten localización de datos</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="step-card">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Reciba Respuesta</h4>
+                                    <p>Responderemos en un plazo máximo de:</p>
+                                    <div class="deadline-badges">
+                                        <div class="deadline-badge">
+                                            <i class="fas fa-calendar-day"></i>
+                                            <strong>20 días hábiles</strong>
+                                            <span>Para informar procedencia</span>
+                                        </div>
+                                        <div class="deadline-badge">
+                                            <i class="fas fa-calendar-check"></i>
+                                            <strong>15 días hábiles</strong>
+                                            <span>Para hacerla efectiva</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección 10: Menores de Edad -->
+                <section id="menores" class="privacy-section">
+                    <div class="section-number">10</div>
+                    <div class="section-header">
+                        <i class="fas fa-child"></i>
+                        <h2>Datos Personales de Menores de Edad</h2>
+                    </div>
+                    <div class="section-body">
+                        <p>La Asociación trata datos de menores de edad (menores de 18 años) con especial cuidado:</p>
+                        
+                        <div class="minors-protections">
+                            <div class="protection-item">
+                                <i class="fas fa-user-shield"></i>
+                                <p>Requerimos consentimiento expreso del padre, madre o tutor legal</p>
+                            </div>
+                            <div class="protection-item">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <p>El tutor tiene derecho a acceder, rectificar y cancelar los datos del menor en cualquier momento</p>
+                            </div>
+                            <div class="protection-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <p>Los datos tienen las mismas protecciones que los de adultos, más salvaguardas adicionales</p>
+                            </div>
+                            <div class="protection-item">
+                                <i class="fas fa-ban"></i>
+                                <p>No utilizamos datos de menores para finalidades mercadotécnicas sin autorización específica del tutor</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección 11: Cambios al Aviso -->
+                <section id="cambios" class="privacy-section">
+                    <div class="section-number">11</div>
+                    <div class="section-header">
+                        <i class="fas fa-sync-alt"></i>
+                        <h2>Cambios al Aviso de Privacidad</h2>
+                    </div>
+                    <div class="section-body">
+                        <p>Nos reservamos el derecho de actualizar este Aviso de Privacidad para reflejar cambios en nuestras prácticas o en la legislación aplicable.</p>
+                        
+                        <div class="notification-methods">
+                            <h4>¿Cómo le notificaremos?</h4>
+                            <div class="method-grid">
+                                <div class="method-item">
+                                    <i class="fas fa-globe"></i>
+                                    <span>Publicación en nuestro sitio web</span>
+                                </div>
+                                <div class="method-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Correo electrónico a la dirección registrada</span>
+                                </div>
+                                <div class="method-item">
+                                    <i class="fas fa-building"></i>
+                                    <span>Aviso visible en nuestras instalaciones</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </article>
+
+            <!-- Botón de Acción -->
+            <div class="action-section">
+                <div class="action-card">
+                    <h3><i class="fas fa-question-circle"></i> ¿Tiene Preguntas?</h3>
+                    <p>Si tiene alguna duda sobre este Aviso de Privacidad o sobre el manejo de sus datos personales, no dude en contactarnos.</p>
+                    <div class="action-buttons">
+                        <a href="principal.html#contacto" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            Contactar
+                        </a>
+                        <a href="docs/AVISO_PRIVACIDAD_USO_DATOS_PERSONALES_2026.pdf" target="_blank" class="btn btn-secondary" download>
+                            <i class="fas fa-file-pdf"></i>
+                            Descargar PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    
+    <!-- Botón Flotante para Scroll Top -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()" aria-label="arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer-simple">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="mailto:asociacion@dodgeballjalisco.com">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="tel:523332363937">
+                        <i class="fas fa-phone"></i> Teléfono
+                    </a>
+                    <a href="https://wa.me/523332363937?text=Hola%2C%20me%20gustaría%20más%20información%20sobre%20el%20Dodgeball." target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Asociación de Dodgeball Jalisco. Todos los derechos reservados.</p>
+                <p style="margin-top: 10px; font-size: 0.85rem;">Este documento cumple con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares y su Reglamento.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Scroll suave a secciones
+        document.querySelectorAll('.quick-nav a, .nav-item').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    const headerHeight = 100;
+                    const targetPosition = targetSection.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mostrar/ocultar botón scroll top
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Función scroll to top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+    <!-- ===== MODAL EN CONSTRUCCIÓN ===== -->
+    <div id="modalOverlay" class="modal-overlay" onclick="closeModalIfOutside(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <button 
+                    type="button"
+                    class="modal-close" 
+                    onclick="closeModal()"
+                    aria-label="Cerrar modal">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h2 id="modalTitle">Sección en Construcción</h2>
+                <p id="modalSubtitle">Próximamente disponible</p>
+            </div>
+
+            <div class="modal-body">
+                <div id="modalContent"></div>
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>¡Gracias por tu interés!</h3>
+                    <p>Te notificaremos cuando esta sección esté disponible.</p>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+                        Revisa tu email para confirmar el registro.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

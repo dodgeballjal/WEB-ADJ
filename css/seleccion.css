@@ -1,0 +1,305 @@
+
+/* =====================================================
+1. SECCIÓN PRINCIPAL
+Contenedor general con gradiente de fondo
+===================================================== */
+.SJ-section {
+    padding: 140px 0 60px;
+    background: white;
+    min-height: 100vh;
+}
+
+/* =====================================================
+    BOTONES DE SELECCIÓN
+===================================================== */
+.selector-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.selector-btn {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 3px solid #b4ff00;
+    background: #2c3e50;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.selector-btn:hover {
+    background: #34495e;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.selector-btn.active {
+    background: #b4ff00;
+    color: #2c3e50;
+    border-color: #2c3e50;
+    box-shadow: 0 8px 20px rgba(180, 255, 0, 0.4);
+}
+
+/* =====================================================
+    CONTENEDOR PRINCIPAL
+===================================================== */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =====================================================
+    TÍTULO DE SECCIÓN
+===================================================== */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 4px solid #b4ff00;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin: 40px 0 20px;
+    font-weight: bold;
+}
+
+/* =====================================================
+    GRID DE JUGADORES (4 columnas x 3 filas)
+===================================================== */
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+/* =====================================================
+    GRID DE STAFF (2 columnas)
+===================================================== */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* =====================================================
+    CREDENCIAL BASE JUGADOR
+===================================================== */
+.credential {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    background: #9d0e5f;
+    border-radius: 35px;
+    padding: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    border: 8px solid #b4ff00;
+    transition: transform 0.3s ease;
+}
+
+.credential:hover {
+    transform: translateY(-5px);
+}
+
+/* =====================================================
+    CREDENCIAL TÉCNICO
+===================================================== */
+.credential-tecnico {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    background: #ffd426;
+    border-radius: 35px;
+    padding: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    border: 8px solid #b4ff00;
+    transition: transform 0.3s ease;
+}
+
+.credential-tecnico:hover {
+    transform: translateY(-5px);
+}
+
+/* =====================================================
+    ELEMENTOS DE LA CREDENCIAL
+===================================================== */
+.photo-frame {
+    width: 100%;
+    height: 320px;
+    background: white;
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    font-size: 14px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shield-circle {
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    width: 140px;
+    height: 140px;
+    background: #c0c0c0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+.shield-tecnico {
+    position: absolute;
+    top: 300px;
+    right: 40px;
+    width: 200px;
+    height: 50px;
+    background: #c0c0c0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+.shield-placeholder {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.shield-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+}
+
+.name-section {
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px;
+    line-height: 1.1;
+}
+
+.role-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #b4ff00;
+    color: #9d0e5f;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* =====================================================
+    RESPONSIVE
+===================================================== */
+@media (max-width: 1024px) {
+    .players-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .players-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .staff-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .selector-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .selector-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .players-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .credential,
+    .credential-tecnico {
+        height: 400px;
+    }
+
+    .photo-frame {
+        height: 260px;
+    }
+
+    .name-section {
+        font-size: 20px;
+    }
+}
+
+/* =====================================================
+    ESTILOS PARA IMPRESIÓN
+===================================================== */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    .selector-buttons,
+    .section-title {
+        display: none;
+    }
+    
+    .credential,
+    .credential-tecnico {
+        page-break-inside: avoid;
+        margin: 10px;
+    }
+}

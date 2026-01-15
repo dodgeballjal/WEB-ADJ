@@ -1,0 +1,261 @@
+/* =====================================================
+   CALENDARIO.CSS - CORREGIDO
+   Sin código duplicado
+===================================================== */
+
+/* Reset Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Layout Principal */
+.main-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 20px 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.calendar-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.calendar-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #1a365d;
+    font-weight: 700;
+}
+
+/* Tarjetas de Eventos */
+.event-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #2b65ec;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.event-date {
+    font-weight: 700;
+    color: #1a365d;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.event-type {
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #eef4ff;
+    color: #2b65ec;
+    display: inline-block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.event-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.event-location {
+    color: #666;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Colores por Tipo */
+.event-card.torneo { border-left-color: #e74c3c; }
+.event-card.liga { border-left-color: #2b65ec; }
+.event-card.amistoso { border-left-color: #27ae60; }
+.event-card.internacional { border-left-color: #f39c12; }
+
+.event-type.torneo { background: #fee; color: #c0392b; }
+.event-type.liga { background: #eef4ff; color: #2b65ec; }
+.event-type.amistoso { background: #e8f5e9; color: #27ae60; }
+.event-type.internacional { background: #fef9e7; color: #d35400; }
+
+/* Eventos Destacados */
+.featured-events {
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 10px;
+}
+
+.featured-title {
+    font-size: 1.5rem;
+    color: #1a365d;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.featured-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.featured-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.featured-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.featured-card:hover .featured-image img {
+    transform: scale(1.05);
+}
+
+.featured-content {
+    padding: 15px;
+}
+
+.featured-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.featured-content h3 {
+    font-size: 1.1rem;
+    color: #1a365d;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.featured-content p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.btn-featured {
+    display: inline-block;
+    padding: 8px 20px;
+    background: linear-gradient(135deg, #2b65ec 0%, #1a365d 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-featured:hover {
+    background: linear-gradient(135deg, #1a365d 0%, #2b65ec 100%);
+    transform: translateX(3px);
+}
+
+/* Scrollbar Personalizado */
+.featured-events::-webkit-scrollbar {
+    width: 8px;
+}
+
+.featured-events::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+.featured-events::-webkit-scrollbar-thumb {
+    background: #1a365d;
+    border-radius: 10px;
+}
+
+.featured-events::-webkit-scrollbar-thumb:hover {
+    background: #0f1f3d;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .main-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .featured-events {
+        position: static;
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+    }
+    
+    .featured-title {
+        font-size: 1.8rem;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-wrapper {
+        padding: 30px 15px 0;
+    }
+    
+    .calendar-title {
+        font-size: 1.6rem;
+    }
+    
+    .featured-title {
+        font-size: 1.5rem;
+    }
+    
+    .featured-image {
+        height: 150px;
+    }
+    
+    .event-card {
+        padding: 16px;
+    }
+}
